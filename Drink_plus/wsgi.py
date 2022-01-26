@@ -1,5 +1,5 @@
 """
-WSGI config for disneyPlusCloneCoding project.
+WSGI config for Drink_plus project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'disneyPlusCloneCoding.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Drink_plus.settings')
 
 application = get_wsgi_application()
