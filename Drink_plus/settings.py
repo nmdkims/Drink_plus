@@ -76,8 +76,15 @@ WSGI_APPLICATION = 'Drink_plus.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
+        'NAME': 'drinkplus',
+        'USER': 'root',
+        'PASSWORD': 'root1234',
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLE"'
+        }
     }
 }
 
