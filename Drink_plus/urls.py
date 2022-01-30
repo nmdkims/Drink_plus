@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app import views
+import user.views
 
 # 여기 from app 써있는거는 패키지 다운 받는 건가요? 네 일단 받았습니다 앱 이 views는 왜 에러인가요?
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('new', views.new, name="new"),
+    path('', include('user.urls')),
 ]
-# 여기 new
+
+
