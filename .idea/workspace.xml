@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="638caa72-9346-487a-89d8-6e76ec5dfdf1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Drink_plus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Drink_plus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drink_plus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Drink_plus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drink_plus/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Drink_plus/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/prac.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1643378199449</updated>
-      <workItem from="1643378247854" duration="2271000" />
+      <workItem from="1643378247854" duration="4247000" />
     </task>
     <servers />
   </component>
