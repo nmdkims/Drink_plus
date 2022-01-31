@@ -25,13 +25,21 @@
         </div>
         <div class="login-box box">
             <form action="/sign-in/">
-            {% csrf_token %}
-                <div>
-                    <div class="login">
-                        <button class="btn">로그인하기</button>
-                    </div>
-                </div>
-            </form>
+                {% if not user.is_authenticated %}
+                    {% csrf_token %}
+                        <div>
+                            <div class="login">
+                                <button class="btn">로그인하기</button>
+                            </div>
+                        </div>
+                {% else %}
+                      <div>
+                            <div class="login">
+                                <a class="btn" href="/logout/">logout</a>
+                            </div>
+                        </div>
+                {% endif %}
+             </form>
         </div>
     </div>
     <div class="main-photo-container">

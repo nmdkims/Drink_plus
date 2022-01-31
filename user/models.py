@@ -1,14 +1,10 @@
 #user/models.py
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-class UserModel(models.Model):
+class UserModel(AbstractUser):
     class Meta:
         db_table = "my_user"
 
-    username = models.CharField(max_length=20, null=False)
-    password = models.CharField(max_length=256, null=False)
-    bio = models.CharField(max_length=256, default='')
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    email = models.EmailField(max_length=256, blank=True)
