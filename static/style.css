@@ -4,12 +4,11 @@
     font-family: sans-serif;
 }
 .wrap {
-
     height: 100%;
     width: 100%;
     background-image: url(/img/-_1.png);
-    background-position: right;
-    background-size: auto;
+    background-position: center;
+    background-size: cover;
     position: absolute;
 }
 .form-wrap {
