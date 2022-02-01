@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="509a96c0-264d-4d3d-8f4e-cd347e8d218f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tweet/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Drink_plus.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Drink_plus.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a9da245-59a7-4969-8505-969a6d5d1ecf.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a9da245-59a7-4969-8505-969a6d5d1ecf/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a9da245-59a7-4969-8505-969a6d5d1ecf/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a9da245-59a7-4969-8505-969a6d5d1ecf/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2a9da245-59a7-4969-8505-969a6d5d1ecf/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Drink_plus/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Drink_plus/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/signin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/user/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1643606180826</updated>
       <workItem from="1643606184604" duration="15345000" />
-      <workItem from="1643633076666" duration="2388000" />
+      <workItem from="1643633076666" duration="4115000" />
+      <workItem from="1643695661639" duration="433000" />
     </task>
     <servers />
   </component>
