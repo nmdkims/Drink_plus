@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+<<<<<<< HEAD
+    <data-source source="LOCAL" name="MySQL - @drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com" uuid="b8640c99-5ed6-405d-90b3-827ec5c6bc38">
+=======
     <data-source source="LOCAL" name="@drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com" uuid="a0f76fb0-875d-403b-96bf-2f4454d7c084">
+>>>>>>> a38a9e241644d38302830da4445be700255ae209
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
