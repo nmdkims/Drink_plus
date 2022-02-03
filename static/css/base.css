@@ -1,0 +1,122 @@
+body {
+    background-color: black;
+}
+
+
+.btn {
+    background-color: beige;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+
+.box {
+    float: left;
+    padding-right: 30px;
+}
+
+
+.user-box {
+    border: 1px solid black;
+    padding: 30px;
+    float: right;
+}
+
+
+.username {
+   color: whitesmoke;
+}
+
+
+.title-box {
+    border: 1px solid black;
+    padding: 1px;
+    float: left;
+}
+
+
+.title-box > title {
+    color: cornflowerblue;
+    transition: color 0.5s ease-in-out;
+    position: fixed;
+    top: 0;
+
+}
+
+
+.title {
+    color: cornflowerblue;
+    transition: color 0.5s ease-in-out;
+}
+
+
+.sub-title-box {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+
+.sub-title-box > sub-title {
+    color: cornflowerblue;
+    transition: color 0.5s ease-in-out;
+    position: fixed;
+    left: 3em;
+    font-size: 12px;
+}
+
+
+.sub-title {
+    color: cornflowerblue;
+    transition: color 0.5s ease-in-out;
+}
+
+
+.titleClicked {
+    color: #BCFF87;
+}
+
+
+.subTitleClicked {
+    color: #BCFF87;
+}
+
+
+.user-box > search-input-box {
+    border: 1px solid black;
+    padding: 10px;
+    float: right;
+}
+
+
+.user-box > search-input-box > search-box {
+    position: fixed;
+    float: left;
+
+}
+
+
+.input-search {
+    background-color: beige;
+    border-radius: 10px;
+    float: left;
+    width: 75%;
+}
+
+.user-box > login-box {
+    position: fixed;
+}
+
+
+.main-photo-container {
+    width: auto;
+    height: auto;
+    max-height: 600px;
+    max-width: 2000px;
+    margin-top: 1em;
+}
+
+.main-photo {
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
