@@ -56,6 +56,11 @@
     if ( window.location.pathname == '/sign-in/' ) {
         document.write( '<style>.navbar{display:none !important;}</style>' );
     }
+    // 로그인 페이지에서 배경화면 black 적용을 하지 않도록 함
+    if ( window.location.pathname == '/sign-in') {
+        document.write( '<style> body{background-color: white !important;}</style>');
+    }
+
     // var 오류로 const로 수정
     const x = document.getElementById("login");
     const y = document.getElementById("register");
