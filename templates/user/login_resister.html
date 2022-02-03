@@ -1,10 +1,6 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>당신의 눈동자에...건배...★</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="wrap">
     <div class="form-wrap">
         <div class="button-wrap">
@@ -40,29 +36,12 @@
     </div>
 
 </div>
+<div class="alert">
+        {% if error %}
+            {{ error }}
+        {% endif %}
+</div>
+{% endblock %}
 
- <div class="alert">
-            {% if error %}
-                {{ error }}
-            {% endif %}
-        </div>
-<script>
-    var x = document.getElementById("login");
-    var y = document.getElementById("register");
-    var z = document.getElementById("btn");
-
-
-    function login() {
-        x.style.left = "50px";
-        y.style.left = "450px";
-        z.style.left = "0";
-    }
-
-    function register() {
-        x.style.left = "-400px";
-        y.style.left = "50px";
-        z.style.left = "110px";
-    }
-</script>
 </body>
 </html>
