@@ -8,59 +8,59 @@
     <title>Drink_plus</title>
 </head>
 <body>
-    <div class="title-box">
-        <div class="title">
-            <h1>Drink Plus</h1>
-        </div>
+<div class="title-box">
+    <div class="title">
+        <h1>Drink Plus</h1>
     </div>
-    <div class="user-box">
-        <div class="search-input-box box">
-            <form action="/search/" method="post">
+</div>
+<div class="user-box">
+    <div class="search-input-box box">
+        <form action="/search/" method="post">
             {% csrf_token %}
-                <div class="search-box">
-                    <input type="text" name="query" placeholder="당신의 술을 검색해주세여" class="input-search">
-                    <button type="submit" class="btn">검색</button>
+            <div class="search-box">
+                <input type="text" name="query" placeholder="당신의 술을 검색해주세여" class="input-search">
+                <button type="submit" class="btn">검색</button>
+            </div>
+        </form>
+    </div>
+    <div class="login-box box">
+        <form action="/sign-in/">
+            {% if not user.is_authenticated %}
+                {% csrf_token %}
+                <div>
+                    <div class="login">
+                        <button class="btn">로그인하기</button>
+                    </div>
                 </div>
-            </form>
-        </div>
-        <div class="login-box box">
-            <form action="/sign-in/">
-                {% if not user.is_authenticated %}
-                    {% csrf_token %}
-                        <div>
-                            <div class="login">
-                                <button class="btn">로그인하기</button>
-                            </div>
-                        </div>
-                {% else %}
-                      <div>
-                            <div class="login">
-                                <a class="btn" href="/logout/">logout</a>
-                            </div>
-                        </div>
-                {% endif %}
-             </form>
-        </div>
+            {% else %}
+                <div>
+                    <div class="login">
+                       <p style="color:whitesmoke"> {{ user.username }}님 </p>
+                        <a class="btn" href="/logout/">logout</a>
+                    </div>
+                </div>
+            {% endif %}
+        </form>
     </div>
-    <div class="main-photo-container">
-        <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
+</div>
+<div class="main-photo-container">
+    <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
+</div>
+<div>
+    <div class="sub-title-box">
+        <div class="sub-title">SoolGoritm</div>
     </div>
-    <div>
-        <div class="sub-title-box">
-            <div class="sub-title">SoolGoritm</div>
-        </div>
-        <ul class="card-box">
-            <li class="recommend-list">첫번째</li>
-            <li class="recommend-list">두번째</li>
-            <li class="recommend-list">세번째</li>
-            <li class="recommend-list">네번째</li>
-            <li class="recommend-list">다섯번째</li>
-            <li class="recommend-list">여섯번째</li>
-            <li class="recommend-list">일곱번째</li>
-            <li class="recommend-list">여덟번째</li>
-        </ul>
-    </div>
-
+    <ul class="card-box">
+        <li class="recommend-list">첫번째</li>
+        <li class="recommend-list">두번째</li>
+        <li class="recommend-list">세번째</li>
+        <li class="recommend-list">네번째</li>
+        <li class="recommend-list">다섯번째</li>
+        <li class="recommend-list">여섯번째</li>
+        <li class="recommend-list">일곱번째</li>
+        <li class="recommend-list">여덟번째</li>
+    </ul>
+</div>
 
 
 <script src="static/js/main.js"></script>
