@@ -90,6 +90,19 @@ DATABASES = {
         'PASSWORD': 'root1234',
     }
 }
+# Drinkplus_main
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'HOST': 'database-1.cyt5fnsjiaht.ap-northeast-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#         'NAME': 'dbtest',
+#         'USER': 'admin',
+#         'PASSWORD': 'root1234',
+#     }
+# }
+# dbtest
 
 
 # Password validation

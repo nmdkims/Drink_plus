@@ -23,8 +23,9 @@ import user.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('new', views.new, name="new"),
+    path('base_disney', views.base_disney, name="base_disney"),
     path('', include('user.urls')),
-    path('', views.main, name='main'),
+    path('', views.main, name="main"),
 
 ]
 

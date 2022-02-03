@@ -8,7 +8,14 @@ class TweetModel(models.Model):
     class Meta:
         db_table = "tweet"
 
-    author = models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    content = models.CharField(max_length=256)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=256, null=True)
+    img = models.CharField(max_length=256, null=True)
+    sub_title = models.CharField(max_length=256, null=True)
+    item_tags1 = models.CharField(max_length=256, null=True)
+    item_tags2 = models.CharField(max_length=256, null=True)
+    item_tags3 = models.CharField(max_length=256, null=True)
+    sub_item_tag1 = models.CharField(max_length=256, null=True)
+    sub_item_tag2 = models.CharField(max_length=256, null=True)
+    sub_item_tag3 = models.CharField(max_length=256, null=True)
+    sub_item_tag4 = models.CharField(max_length=256, null=True)
+    sub_item_tag5 = models.CharField(max_length=256, null=True)
