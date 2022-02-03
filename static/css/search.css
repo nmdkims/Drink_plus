@@ -1,0 +1,15 @@
+.result-box {
+    border: 1px solid black;
+    padding: 100px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin-top: 1em;
+}
+
+
+.search-list {
+    display: inline-block;
+    width: 500px;
+    height: 700px;
+    color: white;
+}

@@ -16,5 +16,10 @@ def main(request):
     return render(request, 'main.html')
 
 
+
 def base_disney(request):
     return render(request, 'base_disney.html')
+
+def search(request):
+    return render(request, 'search.html')
+
