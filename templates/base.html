@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="/static/css/base.css">
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/search.css">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
@@ -21,8 +22,12 @@
         <form action="/search/" method="post">
             {% csrf_token %}
             <div class="search-box">
-                <input type="text" name="query" placeholder="당신의 술을 검색해주세여" class="input-search">
-                <button type="submit" class="btn">검색</button>
+                <div>
+                    <input type="text" name="query" placeholder="당신의 술을 검색해주세여" class="input-search">
+                </div>
+                <div>
+                    <button type="submit" id="search-btn" class="btn">검색</button>
+                </div>
             </div>
         </form>
     </div>
@@ -38,8 +43,12 @@
             {% else %}
                 <div>
                     <div class="login">
-                        <p class="username"> {{ user.username }}님 </p>
-                        <a class="btn" href="/logout/">로그아웃</a>
+                        <div>
+                            <p class="username"> {{ user.username }}님 </p>
+                        </div>
+                        <div>
+                            <a class="btn" href="/logout/">로그아웃</a>
+                        </div>
                     </div>
                 </div>
             {% endif %}
@@ -77,6 +86,19 @@
         y.style.left = "50px";
         z.style.left = "110px";
     }
+    const title = document.querySelector(".title");
+    const subTitle = document.querySelector(".sub-title");
+
+
+    function TitleClick() {
+        title.classList.toggle("titleClicked");
+    }
+    function subTitleClick() {
+        subTitle.classList.toggle("subTitleClicked");
+    }
+
+    title.addEventListener("click", TitleClick);
+    subTitle.addEventListener("click", subTitleClick);
 </script>
 
 </body>

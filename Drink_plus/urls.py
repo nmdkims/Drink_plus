@@ -1,5 +1,4 @@
 """Drink_plus URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
 Examples:
@@ -23,7 +22,8 @@ import user.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('new', views.new, name="new"),
+    path('base_disney', views.base_disney, name="base_disney"),
     path('', include('user.urls')),
-    path('', views.main, name='main'),
 
-]
+    path('', views.main, name='main'),
+    path('search/', views.search, name='search'),
