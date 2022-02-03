@@ -25,7 +25,7 @@ urlpatterns = [
     path('new', views.new, name="new"),
     path('', include('user.urls')),
     path('', views.main, name='main'),
-
+    path('search/', views.search, name='search'),
 ]
 
 
