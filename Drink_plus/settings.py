@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import json
 import os
+from .my_settings import MY_SECRET, MY_DATABASES
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,17 +80,18 @@ WSGI_APPLICATION = 'Drink_plus.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306',
-        'NAME': 'drinkplus',
-        'USER': 'root',
-        'PASSWORD': 'root1234',
-    }
-}
+SECRET_KEY = MY_SECRET['SECRET_KEY']
+DATABASES = MY_DATABASES
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#         'NAME': 'drinkplus',
+#         'USER': 'root',
+#         'PASSWORD': 'root1234',
+#     }
+# }
 # Drinkplus_main
 
 # DATABASES = {
