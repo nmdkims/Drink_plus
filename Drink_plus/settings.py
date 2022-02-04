@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'storages',
     'app',
     'user',
-    'tweet',
     'test',
 ]
 
@@ -167,5 +166,5 @@ AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
 AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
 AWS_DEFAULT_ACL = 'public-read'  # 올린 파일을 누구나 읽을 수 있게 지정합니다!
 
-STATIC_ROOT = '/static/'  # os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = '/static/'  # os.path.join(BASE_DIR, 'static')
 
