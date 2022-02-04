@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import json
 import os
-os.environ.get("DJANGO_SETTINGS_MODULE")
+from .my_settings import MY_SECRET, MY_DATABASES
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-*h@l_7j*xqgk6g91b1ih9a23db9z1&8k&muk+-(thc_p#renbd'
+# SECRET_KEY = 'django-insecure-*h@l_7j*xqgk6g91b1ih9a23db9z1&8k&muk+-(thc_p#renbd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,16 +82,20 @@ WSGI_APPLICATION = 'Drink_plus.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306',
-        'NAME': 'drinkplus',
-        'USER': 'root',
-        'PASSWORD': 'root1234',
-    }
-}
+SECRET_KEY = MY_SECRET['SECRET_KEY']
+DATABASES = MY_DATABASES
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
+#         'PORT': '3306',
+#         'NAME': 'drinkplus',
+#         'USER': 'root',
+#         'PASSWORD': 'root1234',
+#     }
+# }
+
 # Drinkplus_main
 
 # DATABASES = {
