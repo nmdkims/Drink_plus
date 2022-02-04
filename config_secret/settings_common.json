@@ -1,7 +1,7 @@
-{
+ {
   "aws": {
-    "access_key_id": "AKIA3QSGJOBVGNJLN5PL",
-    "secret_access_key": "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",
-    "s3_bucket_name": "drinkplus"
+    "access_key_id": "AKIAS3APDUDPRCBK55XA",
+    "secret_access_key": "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",
+    "s3_bucket_name": "drinkpluss"
   }
 }

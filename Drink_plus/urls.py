@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from app import views
+from app.views import new, main, base_disney, search
 import user.views
 
 # 여기 from app 써있는거는 패키지 다운 받는 건가요? 네 일단 받았습니다 앱 이 views는 왜 에러인가요?
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('new', views.new, name="new"),
-    path('base_disney', views.base_disney, name="base_disney"),
+    path('new', new, name="new"),
+    path('base_disney', base_disney, name="base_disney"),
     path('', include('user.urls')),
 
-    path('', views.main, name='main'),
-    path('search/', views.search, name='search'),
+    path('', main, name='main'),
+    path('search/', search, name='search'),]
 
 

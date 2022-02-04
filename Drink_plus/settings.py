@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'Drink_plus.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'drinkpluscloud.c2ehucnsk9k8.ap-northeast-2.rds.amazonaws.com',
+        'HOST': 'database-1.cyt5fnsjiaht.ap-northeast-2.rds.amazonaws.com',
         'PORT': '3306',
-        'NAME': 'drinkplus',
-        'USER': 'root',
+        'NAME': 'dbtest',
+        'USER': 'admin',
         'PASSWORD': 'root1234',
     }
 }
