@@ -26,7 +26,7 @@ db = pymysql.connect(
 # db = client.dbakbari
 
 # driver = webdriver.Chrome('D:/7team/Drink_plus/chromedriver')
-driver = webdriver.Chrome(executable_path="../chromedriver.exe")
+driver = webdriver.Chrome(executable_path="chromedriver.exe")
 driver.get(
     "https://www.visitjeju.net/kr/detail/list?menuId=DOM_000001719001000000&cate1cd=cate0000000005#p1&region2cd"
     "&pageSize=2000&sortListType=reviewcnt&viewType=thumb")
