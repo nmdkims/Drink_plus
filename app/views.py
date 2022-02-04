@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Img
 
+
 # Create your views here.
 def new(request):
     if request.method == 'POST':
@@ -13,3 +14,12 @@ def new(request):
 
 def main(request):
     return render(request, 'main.html')
+
+
+
+def base_disney(request):
+    return render(request, 'base_disney.html')
+
+def search(request):
+    return render(request, 'search.html')
+

@@ -1,14 +1,16 @@
 # tweet/models.py
 from django.db import models
-from user.models import UserModel
 
 
 # Create your models here.
 class TweetModel(models.Model):
     class Meta:
-        db_table = "tweet"
+        db_table = "test"
 
-    author = models.ForeignKey(UserModel, on_delete=models.CASCADE)
-    content = models.CharField(max_length=256)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    category_name = models.CharField(max_length=256, null=True)
+    img = models.CharField(max_length=256, null=True)
+    title = models.CharField(max_length=256, null=True)
+    price = models.CharField(max_length=256, null=True)
+    description = models.CharField(max_length=256, null=True)
+
+
