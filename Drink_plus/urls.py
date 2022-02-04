@@ -27,3 +27,6 @@ urlpatterns = [
 
     path('', views.main, name='main'),
     path('search/', views.search, name='search'),
+
+    path('',include('test.urls'))
+]

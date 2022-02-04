@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
-    {% block title %}Drink_plus{% endblock %}
+{% block title %}Drink_plus{% endblock %}
 {% block content %}
 
-<div class="main-photo-container">
-    <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
-</div>
-<div>
-    <div class="sub-title-box">
-        <div class="sub-title">SoolGoritm</div>
+    <div class="main-photo-container">
+        <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
     </div>
-    <ul class="card-box">
-        <li class="recommend-list">첫번째</li>
-        <li class="recommend-list">두번째</li>
-        <li class="recommend-list">세번째</li>
-        <li class="recommend-list">네번째</li>
-        <li class="recommend-list">다섯번째</li>
-        <li class="recommend-list">여섯번째</li>
-        <li class="recommend-list">일곱번째</li>
-        <li class="recommend-list">여덟번째</li>
-    </ul>
-</div>
-<script src="static/js/main.js"></script>
+    <div class="sub-content">
+        <div class="sub-title-box">
+            <div class="sub-title">SoolGoritm</div>
+        </div>
+        <ul class="card-box">
+                <li class="recommend-list">
+                    <h3>{{ title_json }}</h3>
+                </li>
+        </ul>
+    </div>
+    <script src="static/js/main.js"></script>
+
 {% endblock %}
