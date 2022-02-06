@@ -144,8 +144,8 @@
                         {% for drink in category_chinaliquor %}
                             <li class="glide__slide">
                                 <a href="{{ drink.price }}" class="card" target="_blank">
-                                    <div class="image-holder">
-                                        <img src="{{ drink.img }}" alt="">
+                                    <div class="image-holder" >
+                                        <img src="{{ drink.img }}" alt="" style="clip-path: inset(0 15%)">
                                     </div>
                                     <div class="title-card">
                                         <h2>{{ drink.title }}</h2>
