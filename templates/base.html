@@ -276,6 +276,7 @@
         #home .glide .glide__track .glide__slides .glide__slide .banner .container {
             position: relative;
             width: 100%;
+            height: 50%;
             display: flex;
             justify-content: space-between;
         }
@@ -917,9 +918,15 @@
         #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
             object-position: center;
+            clip-path: inset(0 15%);
         }
+
+        #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder {
+            background-color: rgb(237, 237, 237);
+        }
+
 
         #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .title-card {
             width: 100%;
@@ -1056,7 +1063,8 @@
     <div class="left-header">
         <div class="title-box">
             <div class="title">
-                <a href="../"><h1 style="font-family: 'Nanum Brush Script', cursive; font-size:50px;">Drink Plus</h1></a>
+                <a href="../"><h1 style="font-family: 'Nanum Brush Script', cursive; font-size:50px;">Drink Plus</h1>
+                </a>
             </div>
         </div>
     </div>
