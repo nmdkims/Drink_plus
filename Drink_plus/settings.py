@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     'app',
     'user',
     'test',
+
+    # 'django.contrib.sites',
+    # # allauth #추가
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # # provider #추가
+    # 'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -168,3 +176,28 @@ AWS_DEFAULT_ACL = 'public-read'  # 올린 파일을 누구나 읽을 수 있게 
 
 # STATIC_ROOT = '/static/'  # os.path.join(BASE_DIR, 'static')
 
+
+# 이 밑으로 새로 추가된 내용 socialaccount 사용 위해
+# AUTHENTICATION_BACKENDS = (
+#     # 'allauth' specific authentication methods, such as login by e-mail
+#     'allauth.account.auth_backends.AuthenticationBackend',
+#
+#     # Needed to login by username in Django admin, regardless of 'allauth'
+#     'django.contrib.auth.backends.ModelBackend',
+#
+# )
+#
+# SITE_ID = 1
+# LOGIN_REDIRECT_URL = '/'
+#
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'SCOPE': [
+#             'profile',
+#             'email',
+#         ],
+#         'AUTH_PARAMS': {
+#             'access_type': 'online',
+#         }
+#     }
+# }

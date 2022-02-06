@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Img
+from test.models import TestModel
 
 
 # Create your views here.
@@ -16,10 +17,20 @@ def main(request):
     return render(request, 'main.html')
 
 
-
-def base_disney(request):
-    return render(request, 'base_disney.html')
-
 def search(request):
-    return render(request, 'search.html')
+    if request.method == 'GET':
 
+        query = request.GET['query']
+        title = TestModel.objects.filter(title__contains=query)
+        category = TestModel.objects.filter(category_name__contains=query)
+        selectdrink = title.union(category)
+
+        context = {
+            'selectdrink': selectdrink,
+            "query": query,
+        }
+        return render(request, 'search.html', context)
+
+
+    elif request.method == 'POST':
+        return render(request, 'search.html')

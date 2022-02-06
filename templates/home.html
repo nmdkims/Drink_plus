@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock title %}
+{% block body %}
+    <section id="home">
+        <!-- Glide JS - Banner Slide -->
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for drink in category_ricewine %}
+                        <li class="glide__slide">
+                            <a href="{{ card.price }}" class="banner" target="_blank">
+                                <div class="container">
+                                    <div class="left-banner-text">
+                                        <h1>{{ drink.title }}</h1>
+                                        <h3>{{ drink.category_name }}</h3>
+                                        <p style="line-height: 40px;">{{ drink.desctiption }}</p>
+                                    </div>
+                                    <div class="right-banner-image">
+
+                                        <img src="{{ drink.img }}" alt="">
+                                    </div>
+                                    <div class="gradient"></div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <!-- Arrows -->
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                      aria-hidden="true"></i></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
+                                                                                       aria-hidden="true"></i></button>
+            </div>
+        </div>
+
+        <!-- disney+ cards -->
+        <div class="thumbnail">
+            <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
+                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
+                <video autoplay loop preload="auto" src=''></video>
+            </a>
+
+            <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6347/746347-h"
+                     alt="">
+                <video autoplay loop preload="auto" src='../static/videos/disney.mp4'></video>
+            </a>
+            <!-- ----- -->
+            <a href="https://www.hotstar.com/in/channels/pixar" class="box" target="_blank">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6348/746348-h"
+                     alt="">
+                <video autoplay loop preload="auto" src='../static/videos/pixar.mp4'></video>
+            </a>
+            <!-- ----- -->
+            <a href="https://www.hotstar.com/in/channels/marvel" class="box" target="_blank">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6349/746349-h"
+                     alt="">
+                <video autoplay loop preload="auto" src='../static/videos/marvel.mp4'></video>
+            </a>
+            <!-- ----- -->
+            <a href="https://www.hotstar.com/in/channels/star-wars" class="box" target="_blank">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6357/746357-h"
+                     alt="">
+                <video autoplay loop preload="auto" src='../static/videos/starwars.mp4'></video>
+            </a>
+            <!-- ----- -->
+            <a href="https://www.hotstar.com/in/channels/nat-geo" class="box" target="_blank">
+                <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6355/746355-h"
+                     alt="">
+                <video autoplay loop preload="auto" src='static/videos/netgeo.mp4'></video>
+            </a>
+            <!-- ----- -->
+        </div>
+        <!-- Cards -->
+        <div class="recomandations">
+            <a href="#" target="_blank">당신을 위한 추천</a>
+            <div class="glide2 glide-c">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {% for drink in category_wine %}
+                            <li class="glide__slide">
+                                <a href="{{ drink.price }}" class="card" target="_blank">
+                                    <div class="image-holder">
+                                        <img src="{{ drink.img }}" alt="">
+                                    </div>
+                                    <div class="title-card">
+                                        <h2>{{ drink.title }}</h2>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Arrows -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                          aria-hidden="true"></i>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
+                                                                                           aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Cards -->
+        <div class="recomandations">
+            <a href="#" target="_blank">맥 주</a>
+            <div class="glide3 glide-c">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {% for drink in category_beer %}
+                            <li class="glide__slide">
+                                <a href="{{ drink.price }}" class="card" target="_blank">
+                                    <div class="image-holder">
+                                        <img src="{{ drink.img }}" alt="">
+                                    </div>
+                                    <div class="title-card">
+                                        <h2>{{ drink.title }}</h2>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Arrows -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                          aria-hidden="true"></i>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
+                                                                                           aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="recomandations">
+            <a href="#" target="_blank">백 주</a>
+            <div class="glide4 glide-c">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {% for drink in category_chinaliquor %}
+                            <li class="glide__slide">
+                                <a href="{{ drink.price }}" class="card" target="_blank">
+                                    <div class="image-holder">
+                                        <img src="{{ drink.img }}" alt="">
+                                    </div>
+                                    <div class="title-card">
+                                        <h2>{{ drink.title }}</h2>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <!-- Arrows -->
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                          aria-hidden="true"></i>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
+                                                                                           aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

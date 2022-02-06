@@ -1,20 +1,61 @@
 {% extends 'base.html' %}
 {% block title %}Drink_plus{% endblock %}
 {% block content %}
+    <head>
+        <link rel="stylesheet" href="../static/css/searchweb.css">
+    </head>
 
-    <div class="main-photo-container">
-        <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
-    </div>
-    <div class="sub-content">
-        <div class="sub-title-box">
-            <div class="sub-title">SoolGoritm</div>
+    <body>
+    <li>{{ category_list }}</li>
+    <div id="main">
+        <div class="main-photo-container">
+            <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
         </div>
-        <ul class="card-box">
-                <li class="recommend-list">
-                    <h3>{{ title_json }}</h3>
-                </li>
-        </ul>
+        <div class="sub-content">
+            <div class="sub-title-box">
+                <div class="sub-title">SoolGoritm</div>
+            </div>
+
+            <div id="container">
+                <div id="main-container">
+                    {% for category in category_wine %}
+                        <div class="sub-item">
+                            <div class="sub-item-user">
+                                <a href="https://gather.town/app/aFVnoYb9QJ4GqA3d/sparta-nbcamp-ai"> <img
+                                        src="{{ category.img }}"></a>
+                                <div class="sub-item-text">
+                                    <p class="sub-item-name">{{ category.title }}</p>
+                                    <p class="sub-item-follower">{{ category.title }}님을 팔로우합니다</p>
+                                </div>
+                            </div>
+                            <p class="sub-item-button">따라가기</p>
+                        </div>
+                    {% endfor %}
+                    {% for category in category_beer %}
+                        <div class="sub-item">
+                            <div class="sub-item-user">
+                                <a href="https://gather.town/app/aFVnoYb9QJ4GqA3d/sparta-nbcamp-ai"> <img
+                                        src="{{ category.img }}"></a>
+                                <div class="sub-item-text">
+                                    <p class="sub-item-name">{{ category.title }}</p>
+                                    <p class="sub-item-follower">{{ category.title }}님을 팔로우합니다</p>
+                                </div>
+                            </div>
+                            <p class="sub-item-button">따라가기</p>
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="static/js/main.js"></script>
+
+    </script>
+
+
+    </body>
 
 {% endblock %}

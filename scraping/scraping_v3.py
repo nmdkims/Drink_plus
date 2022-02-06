@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 import pymysql
 
-driver = webdriver.Chrome(executable_path="chromedriver.exe")
+driver = webdriver.Chrome(executable_path="../chromedriver.exe")
 
 
 # 적절한 내용을 입력하여야 작동합니다.

@@ -47,7 +47,7 @@ def sign_in_view(request):
             auth.login(request, me)
             return redirect('/')
         else:
-
+            print
             return render(request, 'user/login_resister.html', {'error': '아이디 또는 패스워드를 확인해주세요'})  # 로그인 실패시
 
     elif request.method == 'GET':

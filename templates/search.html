@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
-{% block title %}Drink_plus{% endblock %}
-{% block content %}
-<div>
-    <ul class="result-box">
-        <li class="search-list">첫번째</li>
-        <li class="search-list">두번째</li>
-        <li class="search-list">세번째</li>
-        <li class="search-list">네번째</li>
-        <li class="search-list">다섯번째</li>
-        <li class="search-list">여섯번째</li>
-        <li class="search-list">일곱번째</li>
-        <li class="search-list">여덟번째</li>
-    </ul>
-</div>
-<script src="static/js/search.js"></script>
-{% endblock %}
+{% block title %}Search{% endblock title %}
+{% block body %}
+    <section id="search">
+    <h1>Showing all results for <span>"{{query}}"</span></h1>
+    <div class="cards-results">
+    {% for drink in selectdrink %}
+        <a href="{{drink.price}}" target="_blank">
+            <img src="{{drink.img}}" alt="">
+            <h2>{{drink.title}}</h2>
+        </a>
+    {% endfor %}
+    </div>
+    </section>
+{% endblock body %}
