@@ -24,12 +24,12 @@ def test_view(request):
 
     drink = TestModel.objects.all()
     i = 0
-    for dr in drink:
+    for dr in category_beer:
         i += 1
 
         print('=========================================='+str(i)+'============================================')
         print(dr)
-        name =dr.title
+        name =dr.title.split(']')[1].split('(')[0]
         print('name:' + name)
         print('=======================================================================================')
         name1 = dr.title.replace('[', '')
@@ -43,7 +43,7 @@ def test_view(request):
         print('==========================================종' + str(i) + '료============================================')
 
         context ={
-            'drink_title': name4,
+            'name': name4,
         }
 
     print(category_wine)

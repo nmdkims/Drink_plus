@@ -279,6 +279,8 @@
             height: 50%;
             display: flex;
             justify-content: space-between;
+            height:30vw;
+            background: white;
         }
 
         #home
@@ -289,7 +291,7 @@
         .banner
         .container
         .right-banner-image {
-            width: 60%;
+            width: 35%;
         }
 
         #home
@@ -301,7 +303,7 @@
         .container
         .right-banner-image
         img {
-            width: 100%;
+            width: 80%;
             height: 100%;
         }
 
@@ -313,9 +315,11 @@
         .banner
         .container
         .left-banner-text {
-            width: 40%;
+            width: 65%;
             padding: 60px;
             padding-right: 110px;
+            background: linear-gradient(to right,rgb(2,12,25),rgb(2,20,50),rgb(240,230,230),rgb(240,240,240));
+            {#background: linear-gradient(to left,rgb(240,240,240),rgb(240,230,230),rgb(2,20,50),rgb(2,12,25));#}
         }
 
         #home
@@ -370,21 +374,21 @@
             font-size: 40px;
         }
 
-        #home
-        .glide
-        .glide__track
-        .glide__slides
-        .glide__slide
-        .banner
-        .container
-        .gradient {
-            width: 10%;
-            height: 100vh;
-            position: absolute;
-            left: 41%;
-            transform: translate(-41%);
-            background: linear-gradient(to right, #030b17, rgba(0, 0, 0, 0));
-        }
+        {##home#}
+        {#.glide#}
+        {#.glide__track#}
+        {#.glide__slides#}
+        {#.glide__slide#}
+        {#.banner#}
+        {#.container#}
+        {#.gradient {#}
+        {#    width: 10%;#}
+        {#    height: 100vh;#}
+        {#    position: absolute;#}
+        {#    left: 41%;#}
+        {#    transform: translate(-41%);#}
+        {#    background: linear-gradient(to right, #030b17, rgba(0, 0, 0, 0));#}
+        {#}#}
 
         @media only screen and (max-width: 1350px) {
             #home
@@ -915,16 +919,19 @@
             overflow: hidden;
         }
 
+        #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder
+        {
+            background-color: rgb(237, 237, 237);
+        }
+
         #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder img {
             width: 100%;
             height: 100%;
             object-fit: fill;
             object-position: center;
-            clip-path: inset(0 15%);
-        }
 
-        #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder {
-            background-color: rgb(237, 237, 237);
+            clip-path: inset(0 17%);
+
         }
 
 
