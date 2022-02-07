@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 {% block body %}
+    <head>
+        <link rel="stylesheet" href="../static/css/modal.css">
+    </head>
     <section id="home">
         <!-- Glide JS - Banner Slide -->
         <div class="glide">
@@ -147,7 +150,7 @@
                         {% for drink in category_chinaliquor %}
                             <li class="glide__slide">
                                 <a href="{{ drink.price }}" class="card" target="_blank">
-                                    <div class="image-holder" >
+                                    <div class="image-holder"  id="open">
                                         <img src="{{ drink.img }}" alt="">
                                     </div>
                                     <div class="title-card">
@@ -167,7 +170,63 @@
                                                                                            aria-hidden="true"></i>
                     </button>
                 </div>
+
             </div>
         </div>
+        <!-- modal !-->
+        <div class="modal">
+            <div id="modal-mask" class="modal-mask"></div> <!--모달배경!-->
+            <div id="modal-container">
+                <div id="modal-content">
+                    <div id="modal-content-top">
+                        <div id="modal-content-top-left">
+                            <div class="drink-title">하이네켄</div>
+                            <div class="drink-desc">덴마크 맥주다</div>
+                        </div>
+                        <div id="modal-content-top-right">
+                            <button class="closeBtn">X</button>
+                        </div>
+                    </div>
+                    <div id="modal-content-bottom">
+                        <div id="modal-content-bottom-title">
+                            <p>어울려요!</p>
+                            <hr>
+                        </div>
+                        <div id="modal-recommend-container">
+                            <div class="food-item">
+                                <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                 <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                 <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                 <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                                 <div class="food-item-holder">
+                                    <div><img src="#" alt="food"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- modal end !-->
     </section>
+
 {% endblock body %}

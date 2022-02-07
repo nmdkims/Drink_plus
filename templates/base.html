@@ -27,7 +27,8 @@
 
 
     <link rel="shortcut icon" type="image/png" href="https://secure-media.hotstar.com/web-assets/prod/D+H_favicon.ico"/>
-
+    {% block extrahead %}
+    {% endblock %}
 
     <title>{% block title %}{% endblock %}</title>
     <style>
@@ -279,7 +280,7 @@
             height: 50%;
             display: flex;
             justify-content: space-between;
-            height:30vw;
+            height: 30vw;
             background: white;
         }
 
@@ -318,8 +319,10 @@
             width: 65%;
             padding: 60px;
             padding-right: 110px;
+
             background: linear-gradient(to right,rgb(2,12,25),rgb(2,20,50),rgb(240,230,230),rgb(240,240,240));
             {#background: linear-gradient(to left,rgb(240,240,240),rgb(240,230,230),rgb(2,20,50),rgb(2,12,25));#}
+
         }
 
         #home
@@ -388,7 +391,7 @@
         {#    left: 41%;#}
         {#    transform: translate(-41%);#}
         {#    background: linear-gradient(to right, #030b17, rgba(0, 0, 0, 0));#}
-        {#}#}
+
 
         @media only screen and (max-width: 1350px) {
             #home
@@ -730,6 +733,7 @@
             }
         }
 
+
         @media only screen and (max-width: 600px) {
             header {
                 padding: 20px;
@@ -919,8 +923,7 @@
             overflow: hidden;
         }
 
-        #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder
-        {
+        #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder {
             background-color: rgb(237, 237, 237);
         }
 
@@ -1062,6 +1065,7 @@
             top: 0;
             transition: all .5s ease;
         }
+
     </style>
 </head>
 
@@ -1106,10 +1110,10 @@
                     </div>
                 {% endif %}
             </form>
-
         </div>
     </div>
 </header>
+
 
 {% block content %}
 {% endblock %}
@@ -1198,6 +1202,11 @@
 <!-- Scripts -->
 <script src="../static/js/app.js "></script>
 <script src="../static/js/glide.min.js "></script>
+<script src="../static/js/modal.js "></script>
+<script>
+
+
+</script>
 <script>
 
     new Glide('.glide', {
@@ -1310,6 +1319,8 @@
 
     title.addEventListener("click", TitleClick);
     subTitle.addEventListener("click", subTitleClick);
+
+
 </script>
 
 
