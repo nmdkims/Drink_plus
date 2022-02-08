@@ -29,7 +29,8 @@ def search(request):
             'selectdrink': selectdrink,
             "query": query,
         }
-        return render(request, 'search.html', context)
+
+        return render(request, 'search.html', context, )
 
 
     elif request.method == 'POST':
