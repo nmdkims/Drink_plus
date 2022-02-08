@@ -13,12 +13,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="../static/css/base.css">
     <link rel="stylesheet" href="../static/css/main.css">
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="stylesheet" href="../static/css/search.css">
-
+    <link rel="stylesheet" href="../static/css/modal.css">
     <link rel="stylesheet" href="../static/css/search.css">
     <link rel="stylesheet" href="../static/css/search.css">
     <link rel="stylesheet" href="../static/css/search.css">
@@ -371,6 +370,7 @@
 
         button.glide__arrow i {
             font-size: 40px;
+            float:left;
         }
 
         {##home#}
@@ -449,7 +449,6 @@
             background-color: transparent;
             border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 4px;
-            box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
             text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
             opacity: 1;
             cursor: pointer;
@@ -516,17 +515,18 @@
             background-color: white
         }
 
-        .glide--swipeable {
-            cursor: grab;
-            cursor: -moz-grab;
-            cursor: -webkit-grab
-        }
+        {#.glide--swipeable {#}
+        {#    cursor: grab;#}
+        {#    cursor: -moz-grab;#}
+        {#    cursor: -webkit-grab#}
 
+        {##}
         .glide--dragging {
             cursor: grabbing;
-            cursor: -moz-grabbing;
-            cursor: -webkit-grabbing
+            {#cursor: -moz-grabbing;#}
+            {#cursor: -webkit-grabbing;#}
         }
+
 
         .glide {
             position: relative;
@@ -1145,16 +1145,7 @@
         </div>
 
         <div class="hr"></div>
-        <div class="kids-safe-box">
-            <div class="kids-logo">
-                <img src="{% static 'images/kidsSafe.svg' %}" alt="">
-            </div>
-            <div class="toggler">
-                <div class="toggle-box">
-                    <div class="circle"></div>
-                </div>
-            </div>
-        </div>
+
         <div class="nav-ul">
             <ul>
                 <li><a href="https://www.hotstar.com/in/news">News</a></li>
@@ -1195,7 +1186,7 @@
 <!-- Scripts -->
 <script src="../static/js/app.js "></script>
 <script src="../static/js/glide.min.js "></script>
-<script src="../static/js/modal.js "></script>
+<script src="../static/js/modal.js"></script>
 <script>
 
 
@@ -1299,19 +1290,18 @@
     }
 
     const title = document.querySelector(".title");
-    const subTitle = document.querySelector(".sub-title");
+    {#const subTitle = document.querySelector(".sub-title");#}
 
 
     function TitleClick() {
         title.classList.toggle("titleClicked");
     }
 
-    function subTitleClick() {
-        subTitle.classList.toggle("subTitleClicked");
-    }
+    {#function subTitleClick() {#}
+    {#    subTitle.classList.toggle("subTitleClicked");#}
 
     title.addEventListener("click", TitleClick);
-    subTitle.addEventListener("click", subTitleClick);
+    {#subTitle.addEventListener("click", subTitleClick);#}
 
 
 </script>

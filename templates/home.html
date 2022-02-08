@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Home{% endblock title %}
 {% block body %}
-    <head>
-        <link rel="stylesheet" href="../static/css/modal.css">
-    </head>
     <section id="home">
         <!-- Glide JS - Banner Slide -->
         <div class="glide">
@@ -19,7 +16,6 @@
                                         <p style="line-height: 40px;">{{ drink.desctiption }}</p>
                                     </div>
                                     <div class="right-banner-image">
-
                                         <img src="{{ drink.img }}" alt="">
                                     </div>
                                     <div class="gradient"></div>
@@ -40,6 +36,7 @@
 
         <!-- disney+ cards -->
         <div class="thumbnail">
+{#            <button id ="openImg">open</button>#}
             <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
                 <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
                 <video autoplay loop preload="auto" src=''></video>
@@ -84,22 +81,21 @@
                     <ul class="glide__slides">
                         {% for drink in category_wine %}
                             <li class="glide__slide">
-                                <a href="{{ drink.price }}" class="card" target="_blank">
+                                <div class="card" target="_blank">
                                     <div class="image-holder">
                                         <img src="{{ drink.img }}" alt="">
                                     </div>
                                     <div class="title-card">
                                         <h2>{{ drink.title }}</h2>
                                     </div>
-                                </a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
                 </div>
                 <!-- Arrows -->
                 <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
-                                                                                          aria-hidden="true"></i>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left" aria-hidden="true"></i>
                     </button>
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
                                                                                            aria-hidden="true"></i>
@@ -115,22 +111,21 @@
                     <ul class="glide__slides">
                         {% for drink in category_beer %}
                             <li class="glide__slide">
-                                <a href="{{ drink.price }}" class="card" target="_blank">
+                                <div class="card" target="_blank">
                                     <div class="image-holder">
                                         <img src="{{ drink.img }}" alt="">
                                     </div>
                                     <div class="title-card">
                                         <h2>{{ drink.title }}</h2>
                                     </div>
-                                </a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
                 </div>
                 <!-- Arrows -->
                 <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
-                                                                                          aria-hidden="true"></i>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left" aria-hidden="true"></i>
                     </button>
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
                                                                                            aria-hidden="true"></i>
@@ -141,19 +136,20 @@
 
         <div class="recomandations">
             <a href="#" target="_blank">백 주</a>
+            <button id="openImg">open</button>
             <div class="glide4 glide-c">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
                         {% for drink in category_chinaliquor %}
                             <li class="glide__slide">
-                                <a href="{{ drink.price }}" class="card" target="_blank">
-                                    <div class="image-holder"  id="open">
-                                        <img src="{{ drink.img }}" alt="">
+                                <div class="card" target="_blank">
+                                    <div class="image-holder" >
+                                        <img src="{{ drink.img }}" alt="drink" >
                                     </div>
                                     <div class="title-card">
-                                        <h2>{{ drink.title }}</h2>
+                                        {{ drink.title }}
                                     </div>
-                                </a>
+                                </div>
                             </li>
                         {% endfor %}
                     </ul>
@@ -167,22 +163,24 @@
                                                                                            aria-hidden="true"></i>
                     </button>
                 </div>
-
             </div>
         </div>
+
         <!-- modal !-->
-        <div class="modal">
-            <div id="modal-mask" class="modal-mask"></div> <!--모달배경!-->
+        <div id="modal">
             <div id="modal-container">
                 <div id="modal-content">
                     <div id="modal-content-top">
+                        {% for i in category_beer %}
+                        <img src="{{ i.img }}" alt="" class="modalImg">
                         <div id="modal-content-top-left">
-                            <div class="drink-title">하이네켄</div>
-                            <div class="drink-desc">덴마크 맥주다</div>
+                            <div class="drink-title">i.title</div>
+                            <div class="drink-desc">i.desc</div>
                         </div>
                         <div id="modal-content-top-right">
-                            <button class="closeBtn">X</button>
+                            <button id="closeBtn">닫기</button>
                         </div>
+                        {% endfor %}
                     </div>
                     <div id="modal-content-bottom">
                         <div id="modal-content-bottom-title">
@@ -194,36 +192,15 @@
                                 <div class="food-item-holder">
                                     <div><img src="#" alt="food"></div>
                                 </div>
-                                <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                 <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                 <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                 <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                                 <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-
         </div>
         <!-- modal end !-->
     </section>
 
 {% endblock body %}
+<script src = "../static/js/modal.js"></script>

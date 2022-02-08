@@ -34,3 +34,6 @@ def search(request):
 
     elif request.method == 'POST':
         return render(request, 'search.html')
+
+
+
