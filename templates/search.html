@@ -2,15 +2,48 @@
 {% block title %}Search{% endblock title %}
 {% block body %}
     <section id="search">
-    <h1>Showing all results for "{{query}}"</h1>
-    <div class="cards-results">
-
-    {% for drink in selectdrink %}
-        <a href="{{drink.id}}" target="_blank">
-            <img src="{{drink.img}}" alt="">
-            <h2>{{drink.title}}</h2>
-        </a>
-    {% endfor %}
-    </div>
+        <h1>Showing all results for "{{ query }}"</h1>
+        <div class="cards-results">
+            {% for drink in selectdrink %}
+                <a href="{{ drink.id }}" target="_blank">
+                    <img src="{{ drink.img }}" alt="{{ drink.title }}이미지">
+                    <h2>{{ drink.title }}</h2>
+                </a>
+            {% endfor %}
+            {% for food in selectfood %}
+                <a href="{{ food.id }}" target="_blank">
+                    <img src="{{ food.img }}" alt="{{ food.title }}이미지">
+                    <h2>{{ food.title }}</h2>
+                </a>
+            {% endfor %}
+        </div>
     </section>
+
+
+    <ul>
+        <!-- 이전 페이지가 있으면 -->
+        {% if Drinks_list.has_previous %}
+            <a href="?page={{ Drinks_list.previous_page_number }}">이전</a>
+        {% endif %}
+        <!-- 페이지 리스트 -->
+        {% for page_number in Drinks_list.paginator.page_range %}
+            <!-- 현재 페이지 번호랑 같다면 style을 다르게 줄 수 있다. -->
+            {% if page_number == question_list.number %}
+                <li>
+                    <a href="?page={{ page_number }}">{{ page_number }}</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="?page={{ page_number }}">{{ page_number }}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        <!-- 다음 페이지가 있으면 -->
+        {% if Drinks_list.has_next %}
+            <a href="?page={{ Drinks_list.next_page_number }}">다음</a>
+        {% endif %}
+    </ul>
+{#    <!-- <a href="{% url 'home:question_create' %}">질문 등록하기</a> -->#}
+{#    <!-- 모델 폼 이용하지 않을 경우 -->#}
+{#    <a href="{% url 'home:question_new' %}">질문 등록하기</a>#}
 {% endblock body %}

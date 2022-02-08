@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('search/', views.search, name='search'),
-    # path('modal', views.modal, name='modal')
-]
+    path('search/', views.question_list, name='paging'),
+    path('search/<pk>/', views.description, name='description'),
 
+]
