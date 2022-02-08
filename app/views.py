@@ -34,3 +34,15 @@ def search(request):
 
     elif request.method == 'POST':
         return render(request, 'search.html')
+
+
+
+# 검색 후 상세페이지 함수
+def description(request,pk):
+
+    selectdrink = TestModel.objects.get(id=pk)
+    context = {
+        'selectdrink': selectdrink,
+    }
+
+    return render(request, 'detail.html', context)

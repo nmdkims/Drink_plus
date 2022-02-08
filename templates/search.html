@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}Search{% endblock title %}
 {% block body %}
-    <section id="search">
-    <h1>Showing all results for <span>"{{query}}"</span></h1>
+<section id="search">
+    <h1>Showing all results for "{{query}}"</h1>
     <div class="cards-results">
-    {% for drink in selectdrink %}
-        <a href="{{drink.price}}" target="_blank">
-            <img src="{{drink.img}}" alt="">
+        {% for drink in selectdrink %}
+        <a href="{{drink.id}}" target="_blank">
+            <img src="{{drink.img}}" alt="{{drink.title}}이미지">
             <h2>{{drink.title}}</h2>
         </a>
-    {% endfor %}
+        {% endfor %}
     </div>
-    </section>
+</section>
 {% endblock body %}
