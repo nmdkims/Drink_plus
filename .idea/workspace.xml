@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50869eb6-4af8-4862-834b-7a6746d2f790" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/drink_db/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/migrations/0001_initial.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/migrations/0002_drinkmodel_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/drink_db/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/scraping/1page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +292,7 @@
       <workItem from="1644288215035" duration="450000" />
       <workItem from="1644288803989" duration="3072000" />
       <workItem from="1644295298157" duration="2245000" />
-      <workItem from="1644297612211" duration="1514000" />
+      <workItem from="1644297612211" duration="4939000" />
     </task>
     <servers />
   </component>
