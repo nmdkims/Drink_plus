@@ -5,7 +5,7 @@ import sys
 
 sys.path.append('/Users/yangseongjin/Desktop/DrinkProject/Drink_plus/test')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
-from drink_db.models import TestModel
+from drink_db.models import DrinkModel
 import django
 
 django.setup()
@@ -14,15 +14,15 @@ django.setup()
 def drink_db_view(request):
     print("실행확인TEST")
 
-    category_wine = TestModel.objects.filter(category_name='베스트 와인')
+    category_wine = DrinkModel.objects.filter(category_name='베스트 와인')
 
-    category_beer = TestModel.objects.filter(category_name='맥주')
+    category_beer = DrinkModel.objects.filter(category_name='맥주')
 
-    category_ricewine = TestModel.objects.filter(category_name='청주, 약주')
+    category_ricewine = DrinkModel.objects.filter(category_name='청주, 약주')
 
-    category_chinaliquor = TestModel.objects.filter(category_name='백주')
+    category_chinaliquor = DrinkModel.objects.filter(category_name='백주')
 
-    drink = TestModel.objects.all()
+    drink = DrinkModel.objects.all()
     i = 0
     for dr in category_beer:
         i += 1

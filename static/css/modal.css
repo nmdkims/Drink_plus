@@ -1,28 +1,24 @@
+
 body {
     height: 100%;
     margin: 0;
 }
 
-#modal-container {
-    top: 0px;
-    position: absolute;
-    background: linear-gradient(to bottom, #141b29, #0c111b 1500px);
-    width: 50%;
-    height: 80%;
-    margin: 70% 25%;
-    border-radius: 10px;
-    display: none;
+#modal {
+    width: 100%;
 }
 
-#modal-mask .modal-mask {
+#modal-container {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-    display: none;
     background: rgba(0, 0, 0, 0.5);
-    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    display: none;
 }
 
 #modal-content {
@@ -30,8 +26,10 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 100%;
+    width: 50%;
     height: 100%;
+    background: #0c111b;
+    margin-top: 10%;
 }
 
 #modal-content-top {
@@ -42,7 +40,7 @@ body {
     justify-content: space-between;
     background-position: center;
     background-size: cover;
-    background-image: url('https://newsimg.sedaily.com/2021/11/19/22U2U24VOH_1.jpg');
+
     opacity: 0.8;
 }
 
@@ -70,50 +68,60 @@ body {
     color: black;
     width: 5%;
 }
-#modal-content-bottom::-webkit-scrollbar{
+
+#modal-content-bottom::-webkit-scrollbar {
     width: 10px;
     height: 100%;
 }
-#modal-content-bottom::-webkit-scrollbar-track{
+
+#modal-content-bottom::-webkit-scrollbar-track {
     background-color: #131b2b;
 }
-#modal-content-bottom::-webkit-scrollbar-thumb{
+
+#modal-content-bottom::-webkit-scrollbar-thumb {
     background-color: white;
 }
+
 #modal-content-bottom {
     width: 100%;
     height: 50%;
     overflow: auto;
 }
-#modal-content-bottom-title{
+
+#modal-content-bottom-title {
     height: 15%;
 }
-#modal-content-bottom-title p{
+
+#modal-content-bottom-title p {
     font-size: 2vw;
     padding: 1% 0;
     margin-left: 3%;
 }
-#modal-content-bottom-title hr{
+
+#modal-content-bottom-title hr {
     width: 94%;
     margin: auto;
 }
+
 #modal-recommend-container {
     height: 100%;
 }
-.food-item{
+
+.food-item {
     min-height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
 }
+
 .food-item-holder {
-      display: flex;
-      flex-basis: calc(50% - 40px);
-      justify-content: center;
-      flex-direction: column;
-      background-color: #999999;
-      margin:2.3%;
-      height: 14vw;
-      border-radius: 10px;
+    display: flex;
+    flex-basis: calc(50% - 40px);
+    justify-content: center;
+    flex-direction: column;
+    background-color: #999999;
+    margin: 2.3%;
+    height: 14vw;
+    border-radius: 10px;
 }

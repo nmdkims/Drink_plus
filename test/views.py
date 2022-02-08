@@ -22,31 +22,22 @@ def test_view(request):
 
     category_chinaliquor = TestModel.objects.filter(category_name='백주')
 
-    drink = TestModel.objects.all()
+    # drink = TestModel.objects.all()
     i = 0
     for dr in category_beer:
-        i += 1
+          i += 1
 
-        print('=========================================='+str(i)+'============================================')
-        print(dr)
-        name =dr.title.split(']')[1].split('(')[0]
-        print('name:' + name)
-        print('=======================================================================================')
-        name1 = dr.title.replace('[', '')
-        print('name1:' + name1)
-        name2 = dr.title.replace('[', '').replace(']', '')
-        print('name2:' + name2)
-        name3 = dr.title.replace('[', '').replace(']', '').replace('>', '')
-        print('name3:' + name3)
-        name4 = dr.title.replace('[', '').replace(']', '').replace('>', '').replace('<', '')
-        print('name4:' + name4)
-        print('==========================================종' + str(i) + '료============================================')
+          print(dr)
+          name =dr.title.split(']')[1].split('(')[0]
+          print(name)
 
 
-
-    print(category_wine)
-    print("==================================================")
-    print(category_beer)
+    # print(category_wine)
+    # print("==================================================")
+    # print(category_beer)
     return render(request, 'home.html', {'category_wine': category_wine, 'category_beer': category_beer,
                                          'category_ricewine': category_ricewine,
                                          'category_chinaliquor': category_chinaliquor})
+
+
+

@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Img
-from test.models import TestModel
+from drink_db.models import DrinkModel
 
 
 # Create your views here.
@@ -21,8 +21,8 @@ def search(request):
     if request.method == 'GET':
 
         query = request.GET['query']
-        title = TestModel.objects.filter(title__contains=query)
-        category = TestModel.objects.filter(category_name__contains=query)
+        title = DrinkModel.objects.filter(title__icontains=query)
+        category = DrinkModel.objects.filter(category_name__icontains=query)
         selectdrink = title.union(category)
 
         context = {
@@ -47,3 +47,4 @@ def description(request,pk):
     }
 
     return render(request, 'detail.html', context)
+
