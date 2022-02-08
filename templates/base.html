@@ -276,6 +276,7 @@
         #home .glide .glide__track .glide__slides .glide__slide .banner .container {
             position: relative;
             width: 100%;
+            height: 50%;
             display: flex;
             justify-content: space-between;
             height: 30vw;
@@ -317,7 +318,10 @@
             width: 65%;
             padding: 60px;
             padding-right: 110px;
-            background: linear-gradient(to right, rgb(2, 12, 25), rgb(240, 230, 230), rgb(240, 240, 240));
+
+            background: linear-gradient(to right,rgb(2,12,25),rgb(2,20,50),rgb(240,230,230),rgb(240,240,240));
+            {#background: linear-gradient(to left,rgb(240,240,240),rgb(240,230,230),rgb(2,20,50),rgb(2,12,25));#}
+
         }
 
         #home
@@ -928,8 +932,11 @@
             height: 100%;
             object-fit: fill;
             object-position: center;
+
             clip-path: inset(0 17%);
+
         }
+
 
         #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .title-card {
             width: 100%;

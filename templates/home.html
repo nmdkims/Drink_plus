@@ -14,11 +14,12 @@
                                         <h1>{{ drink.title }}</h1>
                                         <h3>{{ drink.category_name }}</h3>
                                         <p style="line-height: 40px;">{{ drink.desctiption }}</p>
+                                        <div class="gradient"></div>
                                     </div>
                                     <div class="right-banner-image">
                                         <img src="{{ drink.img }}" alt="">
                                     </div>
-                                    <div class="gradient"></div>
+
                                 </div>
                             </a>
                         </li>
@@ -36,42 +37,48 @@
 
         <!-- disney+ cards -->
         <div class="thumbnail">
-{#            <button id ="openImg">open</button>#}
+{#          <button id ="openImg">open</button>#}
             <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
                 <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
                 <video autoplay loop preload="auto" src=''></video>
+            <a href="https://www.youtube.com/watch?v=2zHHkSu1br4" class="box" target="_blank">
+{#                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">#}
+{#                https://user-images.githubusercontent.com/89897944/152678967-a54078e5-e430-443a-88d8-6a31df683e4f.gif#}
+                <img class="main-photo" src="https://user-images.githubusercontent.com/89897944/152675636-0f4717fb-cf36-42f9-9b28-9a56f8260ad1.jpg">
+                <video autoplay loop preload="auto" src='https://user-images.githubusercontent.com/89897944/152681491-40d20287-ba74-4999-b7ab-fcf5625eb6a3.mp4'></video>
             </a>
 
-            <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=YVVTZgwYwVo" class="box" target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6347/746347-h"
                      alt="">
                 <video autoplay loop preload="auto" src='../static/videos/disney.mp4'></video>
             </a>
             <!-- ----- -->
-            <a href="https://www.hotstar.com/in/channels/pixar" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=W_MUcyXz3r4&t=81s" class="box" target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6348/746348-h"
                      alt="">
                 <video autoplay loop preload="auto" src='../static/videos/pixar.mp4'></video>
             </a>
             <!-- ----- -->
-            <a href="https://www.hotstar.com/in/channels/marvel" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=R1FRtfEdcUc" class="box" target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6349/746349-h"
                      alt="">
                 <video autoplay loop preload="auto" src='../static/videos/marvel.mp4'></video>
             </a>
             <!-- ----- -->
-            <a href="https://www.hotstar.com/in/channels/star-wars" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=JWxLapTSIo4" class="box" target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6357/746357-h"
                      alt="">
                 <video autoplay loop preload="auto" src='../static/videos/starwars.mp4'></video>
             </a>
             <!-- ----- -->
-            <a href="https://www.hotstar.com/in/channels/nat-geo" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=it-usQ61LYw&list=PLiyeTOfYUQi7GCtbsFCJU9rciljjJnmO3" class="box" target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6355/746355-h"
                      alt="">
                 <video autoplay loop preload="auto" src='static/videos/netgeo.mp4'></video>
             </a>
             <!-- ----- -->
+            </a>
         </div>
         <!-- Cards -->
         <div class="recomandations">
@@ -147,7 +154,7 @@
                                         <img src="{{ drink.img }}" alt="drink" >
                                     </div>
                                     <div class="title-card">
-                                        {{ drink.title }}
+                                        <h2>{{ drink.title }}</h2>
                                     </div>
                                 </div>
                             </li>
