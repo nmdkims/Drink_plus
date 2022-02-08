@@ -1,103 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>술 상세 페이지</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <!--    <link rel="stylesheet" href="../static/css/detail.css">-->
+    <title>술 상세 페이지</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
 
-/* Style the header */
-header {
-  background-color: #666;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
+        body {
+            background: #8e9eab;
+            background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+        }
 
-/* Create two columns/boxes that floats next to each other */
-nav {
-  float: left;
-  width: 30%;
-  height: 300px; /* only for demonstration, should be removed */
-  background: #ccc;
-  padding: 20px;
-}
+        p {
+            font-size: 35px;
+        }
 
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
+        #post {
+            flex-direction: column;
 
-article {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  background-color: #f1f1f1;
-  height: 300px; /* only for demonstration, should be removed */
-}
+        }
 
-/* Clear floats after the columns */
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+        .detail {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 30px 0;
+        }
 
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}
+        .detail-box {
+            display: flex;
+            float: left;
 
-/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
-@media (max-width: 600px) {
-  nav, article {
-    width: 100%;
-    height: auto;
-  }
-}
-</style>
+        }
+
+        .productName {
+            width: 700px;
+            font-weight: bold;
+            word-break: break-all;
+            font-family: 'S-Core Dream' !important;
+            color: #222;
+            /*margin:30px;*/
+
+        }
+
+        .description {
+            margin: 2% 5%;
+            color: #2E2E2E;
+            /*font-weight:bold;*/
+
+        }
+
+        .drink-description {
+            margin: 60px 0;
+            font-size: 30px;
+        }
+
+        .flex-price {
+            font-size: 20px;
+            margin-top: 30px;
+        }
+
+        .flex-discount {
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+
+        hr {
+            width: 90%;
+            size: 10px;
+            color: red;
+        }
+
+        /*음식 추천란*/
+        .food-reco {
+            background-color: #F5ECCE;
+            border-radius: 40px;
+        }
+
+        .food-title {
+            text-align: center;
+            font-size: 25px;
+            color: rgb(112, 112, 112);
+            font-weight: bold;
+            font-family: "Spoqa Han Sans Neo", "sans-serif" !important;
+            -webkit-font-smoothing: antialiased;
+            font-feature-settings: "tnum", "tnum";
+            padding-top: 30px;
+
+
+        }
+
+        .food-img-wraaper {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            background-color: #FAFAFA;
+            justify-content: space-around;
+            margin: 40px 0;
+            padding: 40px;
+
+        }
+
+        .recommed {
+            width: 150px;
+            height: 150px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+
+        .profile {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+    </style>
 </head>
+
 <body>
+<div id="post">
+    <div class="detail">
+        <div class="detail-box" id="image">
+            <div class="image" alt="술 네이밍 띄우기">
+                <img src="{{selectdrink.img}}">
+            </div>
+            <div class="description">
+                <div class="drink_des">
+                    <div class="productName">
+                        <p>{{selectdrink.title}}</p>
+                    </div>
+                    <div class="sector third">
+                        <div class="flex">
+                            <div class="drink-description">{{selectdrink.description}}</div>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="sector four">
+                        <div class="flex-price">
+                            <span>판매가격:</span>
+                        </div>
+                        <div class="flex-discount">
+                            <p>{{selectdrink.price}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-reco">
+                    <div class="food-title">술과 어울리는 안주</div>
+                    <div class="food-img-wraaper">
+                        <div class="food-wrapper">
+                            <div class="recommed">
+                                <img class="profile"
+                                     src="http://newsteacher.chosun.com/site/data/img_dir/2018/03/04/2018030401904_0.jpg"/>
+                            </div>
+                            <label>이미지+연어샐러드</label>
+                        </div>
+                        <div class="food-wrapper">
+                            <div class="recommed">
+                                <img class="profile"
+                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmiFjrt-TWG5TFkggMxB7_dtXeH_29XA2zuQ&usqp=CAU"/>
+                            </div>
+                            <label>카나페</label>
+                        </div>
+                        <div class="food-wrapper">
+                            <div class="recommed">
+                                <img class="profile"
+                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSr4hUAxPe4Y2RA-Z1GMclxGAvERyUEnD6mw&usqp=CAU"/>
+                            </div>
+                            <label>치즈 케이크</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<h2>여기에는 아마 저희 로고나 다른 이미지파일 생각중입니다. 추후 밑 주류 사진 사이즈에 맞게 수정하게씁니다</h2>
-
-
-
-<header>
-{#  <img src="https://cdn.imweb.me/thumbnail/20211210/4c622eeba3f63.png"> 이미지 경로 추가 예정#}
-</header>
-
-<section>
-  <nav>
-    <ul>
-      <li>흠.. 여긴 아직 고민중입니다</li>
-
-    </ul>
-  </nav>
-
-  <article>
-    <h1>술 이름</h1>
-    <p>술에 대한 설명을 적을 칸입니다.</p>
-
-  </article>
-</section>
-
-<footer>
-  <p>여기는.. 필요가 있을지는 모르겠습니다만 일단 해놔씀다.</p>
-</footer>
+</div>
+<!--<h1>{{selectdrink.title}}</h1>-->
+<!--<p>{{selectdrink.description}}</p>-->
+<!--<p>{{selectdrink.price}}</p>-->
 
 </body>
 </html>
+
+
 
