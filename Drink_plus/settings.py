@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app',
     'user',
     'test',
+    'drink_db'
 
     # 'django.contrib.sites',
     # # allauth #추가

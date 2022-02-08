@@ -5,26 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50869eb6-4af8-4862-834b-7a6746d2f790" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9bfcc7d5-4f26-4e70-b3b9-a76a5036660b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9bfcc7d5-4f26-4e70-b3b9-a76a5036660b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9bfcc7d5-4f26-4e70-b3b9-a76a5036660b/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9bfcc7d5-4f26-4e70-b3b9-a76a5036660b/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9bfcc7d5-4f26-4e70-b3b9-a76a5036660b/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9cc6f36-36b4-4744-982f-66090742112f.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9cc6f36-36b4-4744-982f-66090742112f/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9cc6f36-36b4-4744-982f-66090742112f/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9cc6f36-36b4-4744-982f-66090742112f/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b9cc6f36-36b4-4744-982f-66090742112f/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/migrations/0002_drinkmodel_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/drink_db/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/scraping/1page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -310,7 +302,9 @@
       <workItem from="1644240226863" duration="283000" />
       <workItem from="1644240663397" duration="1098000" />
       <workItem from="1644288215035" duration="450000" />
-      <workItem from="1644288803989" duration="390000" />
+      <workItem from="1644288803989" duration="3072000" />
+      <workItem from="1644295298157" duration="2245000" />
+      <workItem from="1644297612211" duration="1514000" />
     </task>
     <servers />
   </component>
