@@ -27,5 +27,6 @@ urlpatterns = [
     # path('search/', search, name='search'),
     # path('', include('test.urls')),
     path('', include('app.urls')),
-    path('',include('drink_db.urls'))
+    path('',include('drink_db.urls')),
+    path('', include('food_db.urls'))
 ]

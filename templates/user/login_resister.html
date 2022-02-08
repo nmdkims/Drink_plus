@@ -1,46 +1,154 @@
 {% extends 'base.html' %}
-
 {% block content %}
-<div class="wrap">
-    <div class="form-wrap">
-        <div class="button-wrap">
-            <div id="btn"></div>
-            <button type="button" class="togglebtn" onclick="login()">로그인</button>
-            <button type="button" class="togglebtn" onclick="register()">회원가입</button>
-        </div>
-        <div class="social-icons">
-            <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/fb.png" alt="facebook">
-            <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/tw.png" alt="twitter">
-            <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/gl.png" alt="google">
-        </div>
+    <head lang="en">
+    <style>
 
-        <form id="login" method="post" action="/sign-in/" class="input-group">
-            {% csrf_token %}
-            <input type="text" id="username" name="username" class="input-field" placeholder="아이디 혹은 이메일을 입력하세요"
-                   required>
-            <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호를 입력하세요" required>
-            <input type="checkbox" class="checkbox"><span>로그인 정보 기억하기</span>
-            <button class="submit">Login</button>
-        </form>
-        <form id="register" method="post" action="/sign-up/" class="input-group">
-            {% csrf_token %}
-            <input type="text" id="username" name="username" class="input-field" placeholder="아이디를 입력해주세요" required>
-            <input type="email" id="email" name="email" class="input-field" placeholder="이메일을 입력해주세요" required>
-            <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호를 입력하세요" required>
-            <input type="password" id="password2" name="password2" class="input-field" placeholder="비밀번호를 확인해주세요"
-                   required>
-            <input type="checkbox" class="checkbox"><span>개인정보 수집 동의 기모링</span>
-            <button class="submit">회원가입</button>
-        </form>
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.wrap {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://user-images.githubusercontent.com/89897944/152942211-995bacb7-1109-4419-90c5-9078d8e1a7f5.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+.form-wrap {
+    top:4%;
+    left:52.4%;
+    width: 24vw;
+    height: 33vw;
+    position: relative;
+    margin: 5%;
+    background: #fff;
+    padding: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgba(240,240,240,0.8);
+}
+.button-wrap {
+    width: 230px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 600px 9px #fcae8f;
+    border-radius: 30px;
+}
+.togglebtn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: .5s;
+}
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+.social-icons img {
+    width: 30px ;
+    cursor: pointer;
+}
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+.input-field {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+.submit {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+.checkbox {
+    margin: 30px 10px 30px 0;
+}
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+#login {
+    left: 50px;
+}
+#register {
+    left: 450px;
+}
+    </style>
+    </head>
+    <body>
+    <div class="wrap"
+         style="background-image:url('https://user-images.githubusercontent.com/89897944/152942211-995bacb7-1109-4419-90c5-9078d8e1a7f5.png')">
+        <div class="form-wrap">
+            <div class="button-wrap">
+                <div id="btn"></div>
+                <button type="button" class="togglebtn" onclick="login()">로그인</button>
+                <button type="button" class="togglebtn" onclick="register()">회원가입</button>
+            </div>
+            <div class="social-icons">
+                <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/fb.png" alt="facebook">
+                <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/tw.png" alt="twitter">
+                <img src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/gl.png" alt="google">
+            </div>
+
+            <form id="login" method="post" action="/sign-in/" class="input-group">
+                {% csrf_token %}
+                <input type="text" id="username" name="username" class="input-field" placeholder="아이디 혹은 이메일을 입력하세요"
+                       required>
+                <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호를 입력하세요"
+                       required>
+                <input type="checkbox" class="checkbox"><span>로그인 정보 기억하기</span>
+                <button class="submit">Login</button>
+            </form>
+            <form id="register" method="post" action="/sign-up/" class="input-group">
+                {% csrf_token %}
+                <input type="text" id="username" name="username" class="input-field" placeholder="아이디를 입력해주세요" required>
+                <input type="email" id="email" name="email" class="input-field" placeholder="이메일을 입력해주세요" required>
+                <input type="password" id="password" name="password" class="input-field" placeholder="비밀번호를 입력하세요"
+                       required>
+                <input type="password" id="password2" name="password2" class="input-field" placeholder="비밀번호를 확인해주세요"
+                       required>
+                <input type="checkbox" class="checkbox"><span>개인정보 수집 동의</span>
+                <button class="submit">회원가입</button>
+            </form>
+
+        </div>
 
     </div>
-
-</div>
-<div class="alert">
+    <div class="alert">
         {% if error %}
             {{ error }}
         {% endif %}
-</div>
+    </div>
 {% endblock %}
 
 </body>
