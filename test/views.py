@@ -22,6 +22,8 @@ def test_view(request):
 
     category_chinaliquor = TestModel.objects.filter(category_name='백주')
 
+    category_rum= TestModel.objects.filter(category_name__icontains='Rum')
+
     # drink = TestModel.objects.all()
     i = 0
     for dr in category_beer:
@@ -37,6 +39,7 @@ def test_view(request):
     # print(category_beer)
     return render(request, 'home.html', {'category_wine': category_wine, 'category_beer': category_beer,
                                          'category_ricewine': category_ricewine,
+                                         'category_rum': category_rum,
                                          'category_chinaliquor': category_chinaliquor})
 
 

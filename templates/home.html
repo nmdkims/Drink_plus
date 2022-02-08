@@ -6,14 +6,14 @@
         <div class="glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                    {% for drink in category_ricewine %}
+                    {% for drink in category_rum %}
                         <li class="glide__slide">
                             <a href="{{ card.price }}" class="banner" target="_blank">
                                 <div class="container">
                                     <div class="left-banner-text">
                                         <h1>{{ drink.title }}</h1>
                                         <h3>{{ drink.category_name }}</h3>
-                                        <p style="line-height: 40px;">{{ drink.desctiption }}</p>
+                                        <p style="line-height: 40px;">{{ drink.description }}</p>
                                         <div class="gradient"></div>
                                     </div>
                                     <div class="right-banner-image">
@@ -37,15 +37,17 @@
 
         <!-- disney+ cards -->
         <div class="thumbnail">
-{#          <button id ="openImg">open</button>#}
-            <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">
-                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">
-                <video autoplay loop preload="auto" src=''></video>
+            {#          <button id ="openImg">open</button>#}
+            {#            <a href="https://www.hotstar.com/in/channels/disney" class="box" target="_blank">#}
+            {#                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">#}
+            {#                <video autoplay loop preload="auto" src=''></video>#}
             <a href="https://www.youtube.com/watch?v=2zHHkSu1br4" class="box" target="_blank">
-{#                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">#}
-{#                https://user-images.githubusercontent.com/89897944/152678967-a54078e5-e430-443a-88d8-6a31df683e4f.gif#}
-                <img class="main-photo" src="https://user-images.githubusercontent.com/89897944/152675636-0f4717fb-cf36-42f9-9b28-9a56f8260ad1.jpg">
-                <video autoplay loop preload="auto" src='https://user-images.githubusercontent.com/89897944/152681491-40d20287-ba74-4999-b7ab-fcf5625eb6a3.mp4'></video>
+                {#                <img class="main-photo" src="https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220129/w.gif">#}
+                {#                https://user-images.githubusercontent.com/89897944/152678967-a54078e5-e430-443a-88d8-6a31df683e4f.gif#}
+                <img class="main-photo"
+                     src="https://user-images.githubusercontent.com/89897944/152675636-0f4717fb-cf36-42f9-9b28-9a56f8260ad1.jpg">
+                <video autoplay loop preload="auto"
+                       src='https://user-images.githubusercontent.com/89897944/152681491-40d20287-ba74-4999-b7ab-fcf5625eb6a3.mp4'></video>
             </a>
 
             <a href="https://www.youtube.com/watch?v=YVVTZgwYwVo" class="box" target="_blank">
@@ -72,7 +74,8 @@
                 <video autoplay loop preload="auto" src='../static/videos/starwars.mp4'></video>
             </a>
             <!-- ----- -->
-            <a href="https://www.youtube.com/watch?v=it-usQ61LYw&list=PLiyeTOfYUQi7GCtbsFCJU9rciljjJnmO3" class="box" target="_blank">
+            <a href="https://www.youtube.com/watch?v=it-usQ61LYw&list=PLiyeTOfYUQi7GCtbsFCJU9rciljjJnmO3" class="box"
+               target="_blank">
                 <img src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_1x/sources/r1/cms/prod/6355/746355-h"
                      alt="">
                 <video autoplay loop preload="auto" src='static/videos/netgeo.mp4'></video>
@@ -82,27 +85,50 @@
         </div>
         <!-- Cards -->
         <div class="recomandations">
-            <a href="#" target="_blank">당신을 위한 추천</a>
+            {% if not user.is_authenticated %}
+                {% csrf_token %}
+                <a href="#" target="_blank">오늘 최고의 한잔은?</a>
+            {% else %}
+                <a href="#" target="_blank">{{ user.username }}님을 위한 추천</a>
+            {% endif %}
+            {#            <a href="#" target="_blank">{{ user.username }}님을 위한 추천</a>#}
             <div class="glide2 glide-c">
                 <div class="glide__track" data-glide-el="track">
                     <ul class="glide__slides">
-                        {% for drink in category_wine %}
-                            <li class="glide__slide">
-                                <div class="card" target="_blank">
-                                    <div class="image-holder">
-                                        <img src="{{ drink.img }}" alt="">
+                        {% if not user.is_authenticated %}
+                            {% csrf_token %}
+                            {% for drink in category_ricewine %}
+                                <li class="glide__slide">
+                                    <div class="card" target="_blank">
+                                        <div class="image-holder">
+                                            <img src="{{ drink.img }}" alt="">
+                                        </div>
+                                        <div class="title-card">
+                                            <h2>{{ drink.title }}</h2>
+                                        </div>
                                     </div>
-                                    <div class="title-card">
-                                        <h2>{{ drink.title }}</h2>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            {% for drink in category_recommend %}
+                                <li class="glide__slide">
+                                    <div class="card" target="_blank">
+                                        <div class="image-holder">
+                                            <img src="{{ drink.img }}" alt="">
+                                        </div>
+                                        <div class="title-card">
+                                            <h2>{{ drink.title }}</h2>
+                                        </div>
                                     </div>
-                                </div>
-                            </li>
-                        {% endfor %}
+                                </li>
+                            {% endfor %}
+                        {% endif %}
                     </ul>
                 </div>
                 <!-- Arrows -->
                 <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left" aria-hidden="true"></i>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                          aria-hidden="true"></i>
                     </button>
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
                                                                                            aria-hidden="true"></i>
@@ -132,7 +158,8 @@
                 </div>
                 <!-- Arrows -->
                 <div class="glide__arrows" data-glide-el="controls">
-                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left" aria-hidden="true"></i>
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-angle-left"
+                                                                                          aria-hidden="true"></i>
                     </button>
                     <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-angle-right"
                                                                                            aria-hidden="true"></i>
@@ -150,8 +177,8 @@
                         {% for drink in category_chinaliquor %}
                             <li class="glide__slide">
                                 <div class="card" target="_blank">
-                                    <div class="image-holder" >
-                                        <img src="{{ drink.img }}" alt="drink" >
+                                    <div class="image-holder">
+                                        <img src="{{ drink.img }}" alt="drink">
                                     </div>
                                     <div class="title-card">
                                         <h2>{{ drink.title }}</h2>
@@ -179,14 +206,14 @@
                 <div id="modal-content">
                     <div id="modal-content-top">
                         {% for i in category_beer %}
-                        <img src="{{ i.img }}" alt="" class="modalImg">
-                        <div id="modal-content-top-left">
-                            <div class="drink-title">i.title</div>
-                            <div class="drink-desc">i.desc</div>
-                        </div>
-                        <div id="modal-content-top-right">
-                            <button id="closeBtn">닫기</button>
-                        </div>
+                            <img src="{{ i.img }}" alt="" class="modalImg">
+                            <div id="modal-content-top-left">
+                                <div class="drink-title">i.title</div>
+                                <div class="drink-desc">i.desc</div>
+                            </div>
+                            <div id="modal-content-top-right">
+                                <button id="closeBtn">닫기</button>
+                            </div>
                         {% endfor %}
                     </div>
                     <div id="modal-content-bottom">
@@ -210,4 +237,4 @@
     </section>
 
 {% endblock body %}
-<script src = "../static/js/modal.js"></script>
+<script src="../static/js/modal.js"></script>
