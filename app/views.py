@@ -56,7 +56,9 @@ def question_list(request):
 def description(request,pk):
 
     selectdrink = DrinkModel.objects.get(id=pk)
+
     food=FoodModel.objects.order_by()[:3]
+
     context = {
         'selectdrink': selectdrink,
         'food':food
