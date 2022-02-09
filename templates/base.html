@@ -319,8 +319,8 @@
             padding: 60px;
             padding-right: 110px;
 
-            background: linear-gradient(to right,rgb(2,12,25),rgb(2,20,50),rgb(240,230,230),rgb(240,240,240));
-            {#background: linear-gradient(to left,rgb(240,240,240),rgb(240,230,230),rgb(2,20,50),rgb(2,12,25));#}
+            background: linear-gradient(to right, rgb(2, 12, 25), rgb(2, 20, 50), rgb(240, 230, 230), rgb(240, 240, 240));
+        {#background: linear-gradient(to left,rgb(240,240,240),rgb(240,230,230),rgb(2,20,50),rgb(2,12,25));#}
 
         }
 
@@ -374,7 +374,7 @@
 
         button.glide__arrow i {
             font-size: 40px;
-            float:left;
+            float: left;
         }
 
         {##home#}
@@ -438,6 +438,22 @@
             .banner
             .container
             .gradient {
+                display: none;
+            }
+
+            #home .glide .glide__track .glide__slides .glide__slide .banner .container .left-banner-text {
+                padding: 30px;
+            }
+
+            #home .glide .glide__track .glide__slides .glide__slide .banner .container .left-banner-text h1 {
+                font-size: 15px;
+            }
+
+            #home .glide .glide__track .glide__slides .glide__slide .banner .container .left-banner-text h3 {
+                display: none;
+            }
+
+            #home .glide .glide__track .glide__slides .glide__slide .banner .container .left-banner-text p {
                 display: none;
             }
         }
@@ -527,10 +543,8 @@
         {##}
         .glide--dragging {
             cursor: grabbing;
-            {#cursor: -moz-grabbing;#}
-            {#cursor: -webkit-grabbing;#}
+        {#cursor: -moz-grabbing;#}{#cursor: -webkit-grabbing;#}
         }
-
 
         .glide {
             position: relative;
@@ -731,6 +745,13 @@
             .search-mobile {
                 display: block;
             }
+              #home .recomandations .glide-c .glide__track .glide__slides .glide__slide .card .image-holder img {
+                width: 100%;
+                height: 200px;
+                object-fit: fill;
+                object-position: center;
+                clip-path: inset(0 17%);
+            }
         }
 
 
@@ -843,6 +864,8 @@
             height: 100%;
             overflow: hidden;
             border-radius: 10px;
+
+
             margin: 20px;
         }
 
@@ -885,6 +908,9 @@
                 height: 150px;
                 margin: 20px;
             }
+
+
+
         }
 
         @media only screen and (max-width: 650px) {
@@ -893,7 +919,7 @@
             }
 
             #home .thumbnail .box {
-                width: 100%;
+                width: 40%;
                 height: 100%;
                 margin: 10px;
             }
