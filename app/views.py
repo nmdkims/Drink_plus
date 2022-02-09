@@ -5,6 +5,7 @@ from drink_db.models import DrinkModel
 from food_db.models import FoodModel
 from django.core.paginator import Paginator
 
+
 # Create your views here.
 def new(request):
     if request.method == 'POST':
@@ -17,21 +18,24 @@ def new(request):
 def main(request):
     return render(request, 'main.html')
 
-#주류와 음식 검색
+
+# 주류와 음식 검색
 def search(request):
     if request.method == 'GET':
 
         query = request.GET['query']
+
         title = DrinkModel.objects.filter(title__icontains=query)
         category = DrinkModel.objects.filter(category_name__icontains=query)
+        selectdrink = title.union(category)
+
         foodtitle = FoodModel.objects.filter(title__icontains=query)
         foodcategory = FoodModel.objects.filter(category_name__icontains=query)
         selectfood = foodtitle.union(foodcategory)
-        selectdrink = title.union(category)
 
         context = {
             'selectdrink': selectdrink,
-            'selectfood':selectfood,
+            'selectfood': selectfood,
             "query": query,
         }
 
@@ -41,27 +45,56 @@ def search(request):
     elif request.method == 'POST':
         return render(request, 'search.html')
 
-#페이지수 제한하는 함수
+
+# 페이지수 제한하는 함수
 
 def question_list(request):
-  Drinks = DrinkModel.objects.order_by('id') # DrinkModel 모델 데이터를 아이디값으로 정렬한다.
-  # Paging 기능 구현하기
-  page = request.GET.get('page', '1') # GET 방식 요청 URL에서 page값을 가져올 때 사용(?page=1). page 파라미터가 없는 URL을 위해 기본값으로 1을 지정한 것
-  paginator = Paginator(Drinks, 6) # Paginator 클래스는 questions를 페이징 객체 paginator로 변환. 페이지당 5개씩 보여주기
-  page_obj = paginator.get_page(page) # page_obj 객체에는 여러 속성이 존재
-  context = { 'Drinks_list' : page_obj } # page_obj를 question_list에 저장한다.
-  return render(request, 'search.html', context)
+    Drinks = DrinkModel.objects.order_by('id')  # DrinkModel 모델 데이터를 아이디값으로 정렬한다.
+    # Paging 기능 구현하기
+    page = request.GET.get('page',
+                           '1')  # GET 방식 요청 URL에서 page값을 가져올 때 사용(?page=1). page 파라미터가 없는 URL을 위해 기본값으로 1을 지정한 것
+    paginator = Paginator(Drinks, 6)  # Paginator 클래스는 questions를 페이징 객체 paginator로 변환. 페이지당 5개씩 보여주기
+    page_obj = paginator.get_page(page)  # page_obj 객체에는 여러 속성이 존재
+    context = {'Drinks_list': page_obj}  # page_obj를 question_list에 저장한다.
+    return render(request, 'search.html', context)
+
 
 # 검색 후 상세페이지 함수
-def description(request,pk):
-
+def description(request, pk):
+    print("상세페이지 진입")
     selectdrink = DrinkModel.objects.get(id=pk)
+    food_matching = selectdrink.pairing_info
+    food_matching = (food_matching).split(',')
 
-    food=FoodModel.objects.order_by()[:3]
+    for i, food in enumerate(food_matching):
+        food = food.strip()
+        print(food)
+        if (i == 0):
+            foodtitle = FoodModel.objects.filter(title__icontains=food)
+
+            foodcategory = FoodModel.objects.filter(category_name__icontains=food)
+            selectfood = foodtitle | foodcategory
+            # print(selectfood)
+            # print(type(selectfood))
+        else:
+            temp = FoodModel.objects.filter(title__icontains=food)
+            selectfood = selectfood | temp
+            temp = FoodModel.objects.filter(category_name__icontains=food)
+            selectfood = selectfood | temp
+
+
+    # print(selectfood)
+    # print(type(selectfood))
+
+    # food = FoodModel.objects.order_by()[:3]
+    food = selectfood.order_by('?')[:3]
+
+    print(food)
+    print(type(food))
 
     context = {
         'selectdrink': selectdrink,
-        'food':food
+        'food': food
     }
 
     return render(request, 'detail.html', context)
@@ -83,4 +116,3 @@ def description(request,pk):
 #
 #     elif request.method == 'POST':
 #         return render(request, 'search.html')
-
