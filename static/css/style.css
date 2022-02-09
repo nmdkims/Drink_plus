@@ -6,16 +6,17 @@
 .wrap {
     height: 100%;
     width: 100%;
-    background-image: url(https://drinkplus.s3.ap-northeast-2.amazonaws.com/uploads/20220203/-_1.png);
+    background-image: url(https://user-images.githubusercontent.com/89897944/152942211-995bacb7-1109-4419-90c5-9078d8e1a7f5.png);
     background-position: center;
     background-size: cover;
     position: absolute;
 }
 .form-wrap {
-    width: 380px;
-    height: 480px;
+    top:0;
+    width: 25vw;
+    height: 44vw;
     position: relative;
-    margin: 6% auto;
+    margin: 0 auto;
     background: #fff;
     padding: 5px;
     overflow: hidden;

@@ -45,7 +45,9 @@
             /*margin:30px;*/
 
         }
-
+        .detail-box .image{
+            width: 100%;
+        }
         .description {
             margin: 0 5%;
             color: #2E2E2E;
@@ -100,7 +102,10 @@
 
 
         }
-
+        .image img{
+            width: 100%;
+            height: 90%;
+        }
         .food-img-wraaper {
             box-sizing: border-box;
             display: flex;
@@ -113,26 +118,33 @@
         }
 
         .recommed {
-            width: 150px;
-            height: 150px;
+            width: 7vw;
+            height: 7vw;
             border-radius: 70%;
             overflow: hidden;
         }
-
+        .food-wrapper{
+              display: flex;
+            flex-direction: row;
+        }
         .profile {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .food-wrapper {
-            color: #4A6163;
+        .fwrapper{
+              display: flex;
+            flex-direction: column;
+            font-size: 1%;
+            white-space: inherit;
+            padding: 3%;
+            justify-content: center;
+            align-items: center;
         }
 
-        .food-text {
-            padding-top: 20px;
-            text-align: center;
-            font-weight: bold;
+        .detail-food-title{
+            padding:20px;
         }
 
     </style>
@@ -143,16 +155,16 @@
     <div class="detail">
         <div class="detail-box" id="image">
             <div class="image" alt="술 네이밍 띄우기">
-                <img src="{{selectdrink.img}}">
+                <img src="{{ selectdrink.img }}">
             </div>
             <div class="description">
                 <div class="drink_des">
                     <div class="productName">
-                        <p>{{selectdrink.title}}</p>
+                        <p>{{ selectdrink.title }}</p>
                     </div>
                     <div class="sector third">
                         <div class="flex">
-                            <div class="drink-description">{{selectdrink.description}}</div>
+                            <div class="drink-description">{{ selectdrink.description }}</div>
                             <hr>
                         </div>
                     </div>
@@ -161,7 +173,7 @@
                             <span>판매가격:</span>
                         </div>
                         <div class="flex-discount">
-                            <p>{{selectdrink.price}}</p>
+                            <p>{{ selectdrink.price }}</p>
                         </div>
                     </div>
                 </div>
@@ -169,31 +181,23 @@
                     <div class="food-title">술과 어울리는 음식</div>
                     <div class="food-img-wraaper">
                         <div class="food-wrapper">
-                            <div class="recommed">
-                                <img class="profile"
-                                     src="http://newsteacher.chosun.com/site/data/img_dir/2018/03/04/2018030401904_0.jpg"/>
-                            </div>
-                            <div class="food-text">이미지+연어샐러드</div>
-                        </div>
-                        <div class="food-wrapper">
-                            <div class="recommed">
-                                <img class="profile"
-                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmiFjrt-TWG5TFkggMxB7_dtXeH_29XA2zuQ&usqp=CAU"/>
-                            </div>
-                            <div class="food-text">카나페</div>
-                        </div>
-                        <div class="food-wrapper">
-                            <div class="recommed">
-                                <img class="profile"
-                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSr4hUAxPe4Y2RA-Z1GMclxGAvERyUEnD6mw&usqp=CAU"/>
-                            </div>
-                            <div class="food-text">치킨</div>
+                            {% for fd in food %}
+                                <div class = "fwrapper">
+                                <div class="recommed">
+                                    <img class="profile" src="{{ fd.img }}"/>
+                                </div>
+                                <div class="detail-food-title">
+                                <label>{{ fd.title }}</label>
+                                </div>
+                                </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </div>
 <!--<h1>{{selectdrink.title}}</h1>-->
