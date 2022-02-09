@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'test',
     'drink_db',
     'food_db',
+    'drink_ratings',
 
     # 'django.contrib.sites',
     # # allauth #추가
