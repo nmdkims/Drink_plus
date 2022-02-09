@@ -44,9 +44,11 @@
             /*margin:30px;*/
 
         }
-        .detail-box .image{
+
+        .detail-box .image {
             width: 100%;
         }
+
         .description {
             margin: 2% 5%;
             color: #2E2E2E;
@@ -94,10 +96,12 @@
 
 
         }
-        .image img{
+
+        .image img {
             width: 100%;
             height: 90%;
         }
+
         .food-img-wraaper {
             box-sizing: border-box;
             display: flex;
@@ -115,17 +119,20 @@
             border-radius: 70%;
             overflow: hidden;
         }
-        .food-wrapper{
-              display: flex;
+
+        .food-wrapper {
+            display: flex;
             flex-direction: row;
         }
+
         .profile {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .fwrapper{
-              display: flex;
+
+        .fwrapper {
+            display: flex;
             flex-direction: column;
             font-size: 1%;
             white-space: inherit;
@@ -135,9 +142,146 @@
         }
 
     </style>
+    <style>
+        header .left-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header .left-header .bars {
+            position: relative;
+        }
+
+        header .left-header .bars .fa-bars {
+            margin-top: 8px;
+            margin-right: 20px;
+            color: rgb(177, 177, 177);
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        header .left-header .brand a img {
+            width: 150px;
+        }
+
+        header .left-header nav > ul {
+            display: flex;
+            margin-top: 8px;
+        }
+
+        header .left-header nav > ul li {
+            margin: 0 15px;
+            padding: 5px;
+        }
+
+        header .left-header nav > ul li a {
+            font-family: "Poppins";
+            font-weight: 500;
+            color: rgb(177, 177, 177);
+        }
+
+        header .left-header nav > ul li a:hover {
+            color: #fff;
+        }
+
+        header .left-header .kids a .kids-logo {
+            margin-top: 8px;
+        }
+
+        header .left-header .kids a .kids-logo img {
+            width: 50px;
+        }
+
+        /* Managing Dropdowns */
+        /* Nav bars Dropdown */
+        header .left-header .bars > .dropdown {
+            background: rgb(33, 33, 70);
+            border-radius: 5px;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translate(-50%);
+            text-align: start;
+            visibility: hidden;
+            height: 0;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        header .left-header .bars > .dropdown > li {
+            display: block;
+            margin: 5px 0;
+        }
+
+        header .left-header .bars > .dropdown > li a {
+            padding: 10px 20px;
+            font-weight: normal;
+            font-family: "Poppins";
+            font-size: 14px;
+            display: block;
+        }
+
+        header .left-header .bars > .dropdown > li a:hover {
+            background-color: #000;
+        }
+
+        header .left-header .bars:hover > .dropdown {
+            visibility: visible;
+            height: 150px;
+            transition: all 0.3s ease;
+        }
+    </style>
+
+
 </head>
 
 <body>
+<header>
+    <div class="left-header">
+        <div class="title-box">
+            <div class="title">
+                <a href="../"><h1 style="font-family: 'Nanum Brush Script', cursive; font-size:50px;">Drink Plus</h1>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="right-header">
+        <div class="user-box">
+            <div class="search-input-box box">
+                <form action="/search/" class="search-form">
+                    {% csrf_token %}
+                    <div class="search-bar">
+                        <input type="text" name="query" id="query" placeholder="당신의 술을 검색해주세요" class="input-search">
+                        <button type="submit" class="search-icon"><i class="fas fa-search" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <form action="/sign-in/">
+                {% if not user.is_authenticated %}
+                    {% csrf_token %}
+                    <div>
+                        <div class="login">
+                            <button class="btn">로그인하기</button>
+                        </div>
+                    </div>
+                {% else %}
+                    <div>
+                        <div class="login">
+                            <div>
+                                <p class="username"> {{ user.username }}님 </p>  <a class="btn" href="/logout/">로그아웃</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</header>
+
 <div id="post">
     <div class="detail">
         <div class="detail-box" id="image">
@@ -169,13 +313,13 @@
                     <div class="food-img-wraaper">
                         <div class="food-wrapper">
                             {% for fd in food %}
-                                <div class = "fwrapper">
-                                <div class="recommed">
-                                    <img class="profile" src="{{ fd.img }}"/>
-                                </div>
-                                <div class="detail-food-title">
-                                <label>{{ fd.title }}</label>
-                                </div>
+                                <div class="fwrapper">
+                                    <div class="recommed">
+                                        <img class="profile" src="{{ fd.img }}"/>
+                                    </div>
+                                    <div class="detail-food-title">
+                                        <label>{{ fd.title }}</label>
+                                    </div>
                                 </div>
                             {% endfor %}
                         </div>

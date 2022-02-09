@@ -55,6 +55,9 @@ def drink_db_view(request):
         # 266번 유저가 좋아했던 영화를 평점 내림차순으로 출력
         category_recommend = title_user.query(f"userId == {user}").sort_values(ascending=False, by=user, axis=1)
 
+        category_recommend = category_recommend[:30]
+        # category_recommend = category_recommend.order_by('?')[:30]
+
         category_recommend_list = []
 
         for i, cate in enumerate(category_recommend):
@@ -68,10 +71,12 @@ def drink_db_view(request):
             temp = DrinkModel.objects.filter(title=str(cate_search).lstrip('/'))[0]
             final_recommend_list.append(temp)
 
+
         # print(final_recommend_list[0])
         # print(final_recommend_list[0][0])
         # print(final_recommend_list[0][0].title)
         # print(type(final_recommend_list))
+
 
         # for cate in category_recommend:
         #     print(cate)
