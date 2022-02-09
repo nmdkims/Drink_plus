@@ -1,211 +1,457 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+{% extends 'base.html' %}
+{% block body %}
+    <head>
 
-    <!--    <link rel="stylesheet" href="../static/css/detail.css">-->
-    <title>술 상세 페이지</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
+        <!--    <link rel="stylesheet" href="../static/css/detail.css">-->
+        <title>술 상세 페이지</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
 
-        body {
-            background: #8e9eab;
-            background: -webkit-linear-gradient(to right, #151B25, #192E41, #9CA6B8);
-            background: linear-gradient(to right, #151B25, #192E41, #9CA6B8);
-        }
-
-
-        p {
-            font-size: 35px;
-        }
-
-        #post {
-            flex-direction: column;
-
-        }
-
-        .detail {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 30px 0;
-        }
-
-        .detail-box {
-            display: flex;
-            float: left;
-
-        }
-
-        .productName {
-            width: 700px;
-            font-weight: bold;
-            word-break: break-all;
-            font-family: 'S-Core Dream' !important;
-            color: #EAEDF0;
-            /*margin:30px;*/
-
-        }
-        .detail-box .image{
-            width: 100%;
-        }
-        .description {
-            margin: 0 5%;
-            color: #2E2E2E;
-            font-weight: bold;
-            /*font-weight:bold;*/
-
-        }
-
-        .drink-description {
-            margin: 60px 0;
-            font-size: 28px;
-            color: #EEEDE7;
-            padding: 5px;
-        }
+            body {
+                height: 100%;
+                background: #8e9eab;
+                background: -webkit-linear-gradient(to right, #151B25, #192E41, #9CA6B8);
+                background: linear-gradient(to right, #151B25, #192E41, #9CA6B8);
+            }
 
 
-        .flex-price {
-            font-size: 20px;
-            margin: 70px 0;
-            color: #BCCBE0;
+            p {
+                font-size: 35px;
+            }
 
-        }
+            #post {
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
 
-        .flex-discount {
-            font-weight: bold;
-            color: aliceblue;
-        }
+            }
+
+            .detail {
+                height: 100%;
+                max-width: 1500px;
+                margin: 0 auto;
+                padding: 7% 0;
+            }
+
+            .detail-box {
+                display: flex;
+                float: none;
+
+            }
+
+            .detail-box .image {
+                width: 100%;
+                background-color: #e6e7e6;
+
+            }
+
+            .detail-box .image img {
+                width: 100%;
+                height: 90%;
+                clip-path: inset(0 17%);
+            }
+
+            .productName {
+                width: 700px;
+                font-weight: bold;
+                word-break: break-all;
+                font-family: 'S-Core Dream' !important;
+                color: #EAEDF0;
+                /*margin:30px;*/
+
+            }
+
+            .detail-box .image {
+                width: 100%;
+            }
+
+            .description {
+                margin: 5%;
+                color: #2E2E2E;
+                font-weight: bold;
+                /*font-weight:bold;*/
+
+            }
+
+            .drink-description {
+                margin: 60px 0;
+                font-size: 28px;
+                color: #EEEDE7;
+                padding: 5px;
+            }
 
 
-        hr {
-            width: 90%;
-            size: 10px;
-            color: red;
-        }
+            .flex-price {
+                font-size: 20px;
+                margin: 70px 0;
+                color: #BCCBE0;
 
-        /*음식 추천란*/
-        .food-reco {
-            background-color: #E7D2CC;
-            border-radius: 40px;
-            margin-top: 80px;
-        }
+            }
 
-        .food-title {
-            text-align: center;
-            font-size: 25px;
-            color: rgb(112, 112, 112);
-            font-weight: bold;
-            -webkit-font-smoothing: antialiased;
-            font-feature-settings: "tnum", "tnum";
-            padding-top: 30px;
-            font-family: 'Noto Serif KR', serif;
+            .flex-discount {
+                font-weight: bold;
+                color: aliceblue;
+            }
 
 
-        }
-        .image img{
-            width: 100%;
-            height: 90%;
-        }
-        .food-img-wraaper {
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            background-color: #FAFAFA;
-            justify-content: space-around;
-            margin: 40px 0;
-            padding: 40px;
+            hr {
+                width: 90%;
+                size: 10px;
+                color: red;
+            }
 
-        }
+            /*음식 추천란*/
+            .food-reco {
+                background-color: #E7D2CC;
+                border-radius: 40px;
+                margin-top: 80px;
+            }
 
-        .recommed {
-            width: 7vw;
-            height: 7vw;
-            border-radius: 70%;
-            overflow: hidden;
-        }
-        .food-wrapper{
-              display: flex;
-            flex-direction: row;
-        }
-        .profile {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+            .food-title {
+                text-align: center;
+                font-size: 25px;
+                color: rgb(112, 112, 112);
+                font-weight: bold;
+                -webkit-font-smoothing: antialiased;
+                font-feature-settings: "tnum", "tnum";
+                padding-top: 30px;
+                font-family: 'Noto Serif KR', serif;
 
-        .fwrapper{
-              display: flex;
-            flex-direction: column;
-            font-size: 1%;
-            white-space: inherit;
-            padding: 3%;
-            justify-content: center;
-            align-items: center;
-        }
 
-        .detail-food-title{
-            padding:20px;
-        }
+            }
 
-    </style>
-</head>
+            .image img {
+                width: 100%;
+                height: 90%;
+            }
 
-<body>
-<div id="post">
-    <div class="detail">
-        <div class="detail-box" id="image">
-            <div class="image" alt="술 네이밍 띄우기">
-                <img src="{{ selectdrink.img }}">
-            </div>
-            <div class="description">
-                <div class="drink_des">
-                    <div class="productName">
-                        <p>{{ selectdrink.title }}</p>
-                    </div>
-                    <div class="sector third">
-                        <div class="flex">
-                            <div class="drink-description">{{ selectdrink.description }}</div>
-                            <hr>
-                        </div>
-                    </div>
-                    <div class="sector four">
-                        <div class="flex-price">
-                            <span>판매가격:</span>
-                        </div>
-                        <div class="flex-discount">
-                            <p>{{ selectdrink.price }}</p>
-                        </div>
-                    </div>
+            .food-img-wraaper {
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: row;
+                background-color: #FAFAFA;
+                justify-content: space-around;
+                margin: 40px 0;
+                padding: 40px;
+
+            }
+
+            .recommed {
+                width: 7vw;
+                height: 7vw;
+                border-radius: 70%;
+                overflow: hidden;
+            }
+
+            .food-wrapper {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .profile {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+
+            .fwrapper {
+                display: flex;
+
+                flex-direction: column;
+                font-size: 1%;
+                white-space: inherit;
+                padding: 3%;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .detail-food-title {
+                padding: 20px;
+            }
+
+            footer {
+                width: 100%;
+                display: flex;
+                justify-content: space-around;
+                align-items: baseline;
+                text-align: center;
+                background: #000;
+                padding: 1%;
+                flex-wrap: wrap;
+            }
+
+            footer p {
+                font-size: 1vw;
+            }
+
+            {#        header {#}
+            {#            width: 100%;#}
+            {#            display: flex;#}
+            {#            justify-content: space-between;#}
+            {#            align-items: center;#}
+            {#            padding: 10px 60px;#}
+            {#            position: fixed;#}
+            {#            top: 0;#}
+            {#            left: 0;#}
+            {#            z-index: 9999;#}
+            {#            background: linear-gradient(to bottom, #141b29, #0c111b 1500px);#}
+            {#        }#}
+            {##}
+            {#        header .left-header {#}
+            {#            display: flex;#}
+            {#            justify-content: center;#}
+            {#            align-items: center;#}
+            {#            text-align: center;#}
+            {#            margin:0;#}
+            {#            padding: 0;#}
+            {#            box-sizing: border-box;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars {#}
+            {#            position: relative;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars .fa-bars {#}
+            {#            margin-top: 8px;#}
+            {#            margin-right: 20px;#}
+            {#            color: rgb(177, 177, 177);#}
+            {#            cursor: pointer;#}
+            {#            padding: 10px;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .brand a img {#}
+            {#            width: 150px;#}
+            {#        }#}
+            {##}
+            {#        header .left-header nav > ul {#}
+            {#            display: flex;#}
+            {#            margin-top: 8px;#}
+            {#        }#}
+            {##}
+            {#        header .left-header nav > ul li {#}
+            {#            margin: 0 15px;#}
+            {#            padding: 5px;#}
+            {#        }#}
+            {##}
+            {#        header .left-header nav > ul li a {#}
+            {#            font-family: "Poppins";#}
+            {#            font-weight: 500;#}
+            {#            color: rgb(177, 177, 177);#}
+            {#        }#}
+            {##}
+            {#        header .left-header nav > ul li a:hover {#}
+            {#            color: #fff;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .kids a .kids-logo {#}
+            {#            margin-top: 8px;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .kids a .kids-logo img {#}
+            {#            width: 50px;#}
+            {#        }#}
+            {##}
+            {#        /* Managing Dropdowns */#}
+            {#        /* Nav bars Dropdown */#}
+            {#        header .left-header .bars > .dropdown {#}
+            {#            background: rgb(33, 33, 70);#}
+            {#            border-radius: 5px;#}
+            {#            position: absolute;#}
+            {#            top: 40px;#}
+            {#            left: 50%;#}
+            {#            transform: translate(-50%);#}
+            {#            text-align: start;#}
+            {#            visibility: hidden;#}
+            {#            height: 0;#}
+            {#            transition: all 0.3s ease;#}
+            {#            overflow: hidden;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars > .dropdown > li {#}
+            {#            display: block;#}
+            {#            margin: 5px 0;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars > .dropdown > li a {#}
+            {#            padding: 10px 20px;#}
+            {#            font-weight: normal;#}
+            {#            font-family: "Poppins";#}
+            {#            font-size: 14px;#}
+            {#            display: block;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars > .dropdown > li a:hover {#}
+            {#            background-color: #000;#}
+            {#        }#}
+            {##}
+            {#        header .left-header .bars:hover > .dropdown {#}
+            {#            visibility: visible;#}
+            {#            height: 150px;#}
+            {#            transition: all 0.3s ease;#}
+            {#        }#}
+            {##}
+            {#        header .right-header {#}
+            {#            display: flex;#}
+            {#            justify-content: center;#}
+            {#            align-items: center;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .search-form .search-bar {#}
+            {#            position: relative;#}
+            {#            margin-top: 8px;#}
+            {#            margin-right: 10px;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .search-form .search-bar input {#}
+            {#            background: transparent;#}
+            {#            border: none;#}
+            {#            outline: none;#}
+            {#            border-bottom: 1px solid rgb(177, 177, 177);#}
+            {#            font-size: 18px;#}
+            {#            width: 250px;#}
+            {#            font-weight: normal;#}
+            {#            transition: all 0.2s ease;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .search-form .search-bar input:focus {#}
+            {#            width: 300px;#}
+            {#            border-bottom: 1px solid rgb(46, 136, 240);#}
+            {#        }#}
+            {##}
+            {#        header .right-header .search-form .search-bar > .search-icon {#}
+            {#            position: absolute;#}
+            {#            right: 10px;#}
+            {#            cursor: pointer;#}
+            {#            color: rgb(177, 177, 177);#}
+            {#        }#}
+            {##}
+            {#        header .right-header .btn1 {#}
+            {#            margin-top: 8px;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .btn1 a {#}
+            {#            padding: 5px 20px;#}
+            {#            margin: 0 10px;#}
+            {#            background: rgb(46, 136, 240);#}
+            {#            border-radius: 5px;#}
+            {#            font-weight: normal;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .user-login {#}
+            {#            margin-top: 8px;#}
+            {#        }#}
+            {##}
+            {#        header .right-header .user-login a {#}
+            {#            text-transform: uppercase;#}
+            {#            color: rgb(177, 177, 177);#}
+            {#            margin: 0 20px;#}
+            {#        }#}
+        </style>
+
+    </head>
+
+    <body>
+    {#<header>#}
+    {#    <div class="left-header">#}
+    {#        <div class="title-box">#}
+    {#            <div class="title">#}
+    {#                <a href="../"><h1 style="font-family: 'Nanum Brush Script', cursive; font-size:50px;">Drink Plus</h1>#}
+    {#                </a>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+    {#    <div class="right-header">#}
+    {#        <div class="user-box">#}
+    {#            <div class="search-input-box box">#}
+    {#                <form action="/search/" class="search-form">#}
+    {#                    {% csrf_token %}#}
+    {#                    <div class="search-bar">#}
+    {#                        <input type="text" name="query" id="query" placeholder="당신의 술을 검색해주세요" class="input-search">#}
+    {#                        <button type="submit" class="search-icon"><i class="fas fa-search" aria-hidden="true"></i>#}
+    {#                        </button>#}
+    {#                    </div>#}
+    {#                </form>#}
+    {#            </div>#}
+    {##}
+    {#            <form action="/sign-in/">#}
+    {#                {% if not user.is_authenticated %}#}
+    {#                    {% csrf_token %}#}
+    {#                    <div>#}
+    {#                        <div class="login">#}
+    {#                            <button class="btn">로그인하기</button>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                {% else %}#}
+    {#                    <div>#}
+    {#                        <div class="login">#}
+    {#                            <div>#}
+    {#                                <p class="username"> {{ user.username }}님 </p>  <a class="btn" href="/logout/">로그아웃</a>#}
+    {#                            </div>#}
+    {#                        </div>#}
+    {#                    </div>#}
+    {#                {% endif %}#}
+    {#            </form>#}
+    {#        </div>#}
+    {#    </div>#}
+    {#</header>#}
+
+    <div id="post">
+        <div class="detail">
+            <div class="detail-box" id="image">
+                <div class="image" alt="술 네이밍 띄우기">
+                    <img src="{{ selectdrink.img }}">
                 </div>
-                <div class="food-reco">
-                    <div class="food-title">술과 어울리는 음식</div>
-                    <div class="food-img-wraaper">
-                        <div class="food-wrapper">
-                            {% for fd in food %}
-                                <div class = "fwrapper">
-                                <div class="recommed">
-                                    <img class="profile" src="{{ fd.img }}"/>
-                                </div>
-                                <div class="detail-food-title">
-                                <label>{{ fd.title }}</label>
-                                </div>
-                                </div>
-                            {% endfor %}
+                <div class="description">
+                    <div class="drink_des">
+                        <div class="productName">
+                            <p>{{ selectdrink.title }}</p>
+                        </div>
+                        <div class="sector third">
+                            <div class="flex">
+                                <div class="drink-description">{{ selectdrink.description }}</div>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="sector four">
+                            <div class="flex-price">
+                                <span>판매가격:</span>
+                            </div>
+                            <div class="flex-discount">
+                                <p>{{ selectdrink.price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="food-reco">
+                        <div class="food-title">술과 어울리는 음식</div>
+                        <div class="food-img-wraaper">
+                            <div class="food-wrapper">
+                                {% for fd in food %}
+                                    <div class="fwrapper">
+                                        <div class="recommed">
+                                            <img class="profile" src="{{ fd.img }}"/>
+                                        </div>
+                                        <div class="detail-food-title">
+                                            <label style="color: #0c111b">{{ fd.title }}</label>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-</div>
-<!--<h1>{{selectdrink.title}}</h1>-->
-<!--<p>{{selectdrink.description}}</p>-->
-<!--<p>{{selectdrink.price}}</p>-->
+    </div>
+    <!--<h1>{{selectdrink.title}}</h1>-->
+    <!--<p>{{selectdrink.description}}</p>-->
+    <!--<p>{{selectdrink.price}}</p>-->
 
-</body>
-</html>
-
-
+    </body>
+    </html>
+{% endblock body %}
+{% block footer %}{% endblock footer %}
 

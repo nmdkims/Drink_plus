@@ -5,13 +5,13 @@
         <h1>Showing all results for "{{ query }}"</h1>
         <div class="cards-results">
             {% for drink in selectdrink %}
-                <a href="{{ drink.id }}" target="_blank">
+                <a href="{{ drink.id }}" >
                     <img src="{{ drink.img }}" alt="{{ drink.title }}이미지">
                     <h2>{{ drink.title }}</h2>
                 </a>
             {% endfor %}
             {% for food in selectfood %}
-                <a href="{{ food.id }}" target="_blank">
+                <a href="{{ food.id }}" >
                     <img src="{{ food.img }}" alt="{{ food.title }}이미지">
                     <h2>{{ food.title }}</h2>
                 </a>

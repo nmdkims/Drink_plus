@@ -199,40 +199,40 @@
             </div>
         </div>
 
-        <!-- modal !-->
-        <div id="modal">
-            <div id="modal-container">
-                <div id="modal-content">
-                    <div id="modal-content-top">
-                        {% for i in category_beer %}
-                            <img src="{{ i.img }}" alt="" class="modalImg">
-                            <div id="modal-content-top-left">
-                                <div class="drink-title">i.title</div>
-                                <div class="drink-desc">i.desc</div>
-                            </div>
-                            <div id="modal-content-top-right">
-                                <button id="closeBtn">닫기</button>
-                            </div>
-                        {% endfor %}
-                    </div>
-                    <div id="modal-content-bottom">
-                        <div id="modal-content-bottom-title">
-                            <p>어울려요!</p>
-                            <hr>
-                        </div>
-                        <div id="modal-recommend-container">
-                            <div class="food-item">
-                                <div class="food-item-holder">
-                                    <div><img src="#" alt="food"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- modal end !-->
+{#        <!-- modal !-->#}
+{#        <div id="modal">#}
+{#            <div id="modal-container">#}
+{#                <div id="modal-content">#}
+{#                    <div id="modal-content-top">#}
+{#                        {% for i in category_beer %}#}
+{#                            <img src="{{ i.img }}" alt="" class="modalImg">#}
+{#                            <div id="modal-content-top-left">#}
+{#                                <div class="drink-title">i.title</div>#}
+{#                                <div class="drink-desc">i.desc</div>#}
+{#                            </div>#}
+{#                            <div id="modal-content-top-right">#}
+{#                                <button id="closeBtn">닫기</button>#}
+{#                            </div>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                    <div id="modal-content-bottom">#}
+{#                        <div id="modal-content-bottom-title">#}
+{#                            <p>어울려요!</p>#}
+{#                            <hr>#}
+{#                        </div>#}
+{#                        <div id="modal-recommend-container">#}
+{#                            <div class="food-item">#}
+{#                                <div class="food-item-holder">#}
+{#                                    <div><img src="#" alt="food"></div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <!-- modal end !-->#}
     </section>
 
 {% endblock body %}
