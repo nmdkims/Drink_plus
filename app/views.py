@@ -92,6 +92,7 @@ def description(request, pk):
     print(food)
     print(type(food))
 
+
     context = {
         'selectdrink': selectdrink,
         'food': food

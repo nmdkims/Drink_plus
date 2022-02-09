@@ -10,9 +10,10 @@
 
         body {
             background: #8e9eab;
-            background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            background: -webkit-linear-gradient(to right, #151B25, #192E41, #9CA6B8);
+            background: linear-gradient(to right, #151B25, #192E41, #9CA6B8);
         }
+
 
         p {
             font-size: 35px;
@@ -40,7 +41,7 @@
             font-weight: bold;
             word-break: break-all;
             font-family: 'S-Core Dream' !important;
-            color: #222;
+            color: #EAEDF0;
             /*margin:30px;*/
 
         }
@@ -48,20 +49,26 @@
             width: 100%;
         }
         .description {
-            margin: 2% 5%;
+            margin: 0 5%;
             color: #2E2E2E;
+            font-weight: bold;
             /*font-weight:bold;*/
 
         }
 
         .drink-description {
             margin: 60px 0;
-            font-size: 30px;
+            font-size: 28px;
+            color: #EEEDE7;
+            padding: 5px;
         }
+
 
         .flex-price {
             font-size: 20px;
-            margin-top: 30px;
+            margin: 70px 0;
+            color: #BCCBE0;
+
         }
 
         .flex-discount {
@@ -78,8 +85,9 @@
 
         /*음식 추천란*/
         .food-reco {
-            background-color: #F5ECCE;
+            background-color: #E7D2CC;
             border-radius: 40px;
+            margin-top: 80px;
         }
 
         .food-title {
@@ -87,10 +95,10 @@
             font-size: 25px;
             color: rgb(112, 112, 112);
             font-weight: bold;
-            font-family: "Spoqa Han Sans Neo", "sans-serif" !important;
             -webkit-font-smoothing: antialiased;
             font-feature-settings: "tnum", "tnum";
             padding-top: 30px;
+            font-family: 'Noto Serif KR', serif;
 
 
         }
@@ -124,6 +132,7 @@
             height: 100%;
             object-fit: cover;
         }
+
         .fwrapper{
               display: flex;
             flex-direction: column;
@@ -132,6 +141,10 @@
             padding: 3%;
             justify-content: center;
             align-items: center;
+        }
+
+        .detail-food-title{
+            padding:20px;
         }
 
     </style>
@@ -165,7 +178,7 @@
                     </div>
                 </div>
                 <div class="food-reco">
-                    <div class="food-title">술과 어울리는 안주</div>
+                    <div class="food-title">술과 어울리는 음식</div>
                     <div class="food-img-wraaper">
                         <div class="food-wrapper">
                             {% for fd in food %}
