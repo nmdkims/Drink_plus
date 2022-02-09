@@ -10,9 +10,10 @@
 
         body {
             background: #8e9eab;
-            background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            background: -webkit-linear-gradient(to right, #151B25, #192E41, #9CA6B8);
+            background: linear-gradient(to right, #151B25, #192E41, #9CA6B8);
         }
+
 
         p {
             font-size: 35px;
@@ -40,26 +41,32 @@
             font-weight: bold;
             word-break: break-all;
             font-family: 'S-Core Dream' !important;
-            color: #222;
+            color: #EAEDF0;
             /*margin:30px;*/
 
         }
 
         .description {
-            margin: 2% 5%;
+            margin: 0 5%;
             color: #2E2E2E;
+            font-weight: bold;
             /*font-weight:bold;*/
 
         }
 
         .drink-description {
             margin: 60px 0;
-            font-size: 30px;
+            font-size: 28px;
+            color: #EEEDE7;
+            padding: 5px;
         }
+
 
         .flex-price {
             font-size: 20px;
-            margin-top: 30px;
+            margin: 70px 0;
+            color: #BCCBE0;
+
         }
 
         .flex-discount {
@@ -76,8 +83,9 @@
 
         /*음식 추천란*/
         .food-reco {
-            background-color: #F5ECCE;
+            background-color: #E7D2CC;
             border-radius: 40px;
+            margin-top: 80px;
         }
 
         .food-title {
@@ -85,10 +93,10 @@
             font-size: 25px;
             color: rgb(112, 112, 112);
             font-weight: bold;
-            font-family: "Spoqa Han Sans Neo", "sans-serif" !important;
             -webkit-font-smoothing: antialiased;
             font-feature-settings: "tnum", "tnum";
             padding-top: 30px;
+            font-family: 'Noto Serif KR', serif;
 
 
         }
@@ -117,6 +125,15 @@
             object-fit: cover;
         }
 
+        .food-wrapper {
+            color: #4A6163;
+        }
+
+        .food-text {
+            padding-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
 
     </style>
 </head>
@@ -149,28 +166,28 @@
                     </div>
                 </div>
                 <div class="food-reco">
-                    <div class="food-title">술과 어울리는 안주</div>
+                    <div class="food-title">술과 어울리는 음식</div>
                     <div class="food-img-wraaper">
                         <div class="food-wrapper">
                             <div class="recommed">
                                 <img class="profile"
                                      src="http://newsteacher.chosun.com/site/data/img_dir/2018/03/04/2018030401904_0.jpg"/>
                             </div>
-                            <label>이미지+연어샐러드</label>
+                            <div class="food-text">이미지+연어샐러드</div>
                         </div>
                         <div class="food-wrapper">
                             <div class="recommed">
                                 <img class="profile"
                                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmiFjrt-TWG5TFkggMxB7_dtXeH_29XA2zuQ&usqp=CAU"/>
                             </div>
-                            <label>카나페</label>
+                            <div class="food-text">카나페</div>
                         </div>
                         <div class="food-wrapper">
                             <div class="recommed">
                                 <img class="profile"
                                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSr4hUAxPe4Y2RA-Z1GMclxGAvERyUEnD6mw&usqp=CAU"/>
                             </div>
-                            <label>치즈 케이크</label>
+                            <div class="food-text">치킨</div>
                         </div>
                     </div>
                 </div>

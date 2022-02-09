@@ -41,7 +41,7 @@ def search(request):
 # 검색 후 상세페이지 함수
 def description(request,pk):
 
-    selectdrink = TestModel.objects.get(id=pk)
+    selectdrink = DrinkModel.objects.get(id=pk)
     context = {
         'selectdrink': selectdrink,
     }
