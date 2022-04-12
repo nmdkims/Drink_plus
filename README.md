@@ -9,5 +9,5 @@
 
 참고자료 : https://github.com/ScreenTechnicals/DisneyPlusClone
 
-시연 유튜브 : https://studio.youtube.com/video/KhN5VWd5k6M/edit 
+시연 유튜브 : https://www.youtube.com/watch?v=KhN5VWd5k6M
 
